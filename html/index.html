@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>GUARDIAN.ai • Chat</title>
+    <style>
+      body {
+        margin: 0;
+        font-family: "Segoe UI", Tahoma, sans-serif;
+        background: #0b1e34;
+        color: #fff;
+        height: 100vh;
+        display: flex;
+        font-size: 16px;
+        line-height: 1.6;
+      }
+
+      /* Sidebar */
+      .sidebar {
+        width: 20%;
+        background: #0d182a;
+        display: flex;
+        flex-direction: column;
+        padding: 20px;
+        box-sizing: border-box;
+        border-right: 1px solid #1f4068;
+      }
+      .logo {
+        font-size: 22px;
+        font-weight: bold;
+        color: #a8dadc;
+        margin-bottom: 10px;
+      }
+      .tagline {
+        font-size: 14px;
+        color: #74c0c9;
+        margin-bottom: 25px;
+      }
+      .nav a {
+        text-decoration: none;
+      }
+      .nav button {
+        width: 100%;
+        padding: 12px;
+        margin-bottom: 12px;
+        border: none;
+        border-radius: 10px;
+        background: #1e3354;
+        color: #a8dadc;
+        font-size: 16px;
+        text-align: left;
+        cursor: pointer;
+        transition: 0.2s;
+      }
+      .nav button:hover,
+      .nav .active {
+        background: #457b9d;
+        color: #fff;
+      }
+      .privacy-note {
+        margin-top: auto;
+        font-size: 13px;
+        color: #74c0c9;
+        background: #0f1f36;
+        padding: 10px;
+        border-radius: 8px;
+      }
+
+      /* Chat section */
+      .chat-section {
+        flex: 1;
+        background: #11263f;
+        display: flex;
+        flex-direction: column;
+      }
+      .chat-header {
+        padding: 12px 20px;
+        background: #0a192f;
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        font-size: 16px;
+        font-weight: bold;
+        color: #a8dadc;
+        border-bottom: 1px solid #1f4068;
+      }
+      .chat-messages {
+        flex: 1;
+        overflow-y: auto;
+        padding: 20px;
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+      }
+      .message {
+        max-width: 65%;
+        padding: 14px 18px;
+        border-radius: 14px;
+        font-size: 15px; /* chat text smaller */
+        line-height: 1.6;
+        box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+      }
+      .bot {
+        align-self: flex-start;
+        background: #e0f2ff;
+        color: #0a192f;
+      }
+      .user {
+        align-self: flex-end;
+        background: #1f4068;
+        color: #fff;
+      }
+
+      /* Input */
+      .chat-input {
+        display: flex;
+        padding: 12px;
+        background: #0a192f;
+        align-items: center;
+        gap: 10px;
+      }
+      .chat-input input {
+        flex: 1;
+        padding: 14px 20px;
+        border-radius: 25px;
+        border: none;
+        background: #1b2735;
+        color: #fff;
+        outline: none;
+        font-size: 15px;
+      }
+      .chat-input label,
+      .chat-input button {
+        padding: 10px 18px;
+        border-radius: 20px;
+        border: none;
+        cursor: pointer;
+        font-weight: bold;
+        font-size: 15px;
+      }
+      .chat-input label {
+        background: #1e3354;
+        color: #a8dadc;
+      }
+      .chat-input button {
+        background: #457b9d;
+        color: #fff;
+      }
+      #fileInput {
+        display: none;
+      }
+
+      /* Footer */
+      .footer {
+        background: #0a192f;
+        padding: 10px 15px;
+        text-align: center;
+        font-size: 13px;
+        color: #74c0c9;
+        border-top: 1px solid #1f4068;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Sidebar -->
+    <div class="sidebar">
+      <div class="logo">GUARDIAN.ai</div>
+      <div class="tagline">Your AI Health Companion</div>
+      <div class="nav">
+        <button>🆕 New Chat</button>
+        <a href="index.html"><button class="active">💬 Current Chat</button></a>
+        <a href="cbc.html"><button>📄 CBC Analysis</button></a>
+        <a href="tips.html"><button>💡 Preventive Tips</button></a>
+        <a href="reports.html"><button>📂 Past Reports</button></a>
+      </div>
+      <div class="privacy-note">
+        🔒 Encrypted & Private<br />
+        All uploads stored locally in this demo.<br />
+        In production, data is encrypted at rest & in transit.
+      </div>
+    </div>
+
+    <!-- Chat section -->
+    <div class="chat-section">
+      <div class="chat-header">🤖 GUARDIAN.ai • Empathetic health insights</div>
+      <div class="chat-messages" id="chat">
+        <div class="message bot">
+          👋 Welcome to GUARDIAN.ai. Please describe your symptoms or upload
+          your CBC report.
+        </div>
+      </div>
+      <div class="chat-input">
+        <input
+          type="text"
+          id="userInput"
+          placeholder="Describe your symptoms..."
+        />
+        <label for="fileInput">📄 Upload</label>
+        <input type="file" id="fileInput" accept=".pdf,.csv,.jpg,.png" />
+        <button id="sendBtn">Send</button>
+      </div>
+      <div class="footer">
+        Disclaimer: GUARDIAN.ai provides AI-based health insights and is not a
+        substitute for professional medical advice.
+      </div>
+    </div>
+
+    <!-- ... rest of your existing index.html content remains unchanged ... -->
+
+    <script>
+      window.addEventListener("DOMContentLoaded", () => {
+        const chatInput = document.getElementById("userInput");
+        const chatContainer = document.getElementById("chat");
+        const sendBtn = document.getElementById("sendBtn");
+
+        // Function to send user message to server and render response
+        async function sendMessage(message) {
+          if (!message.trim()) return;
+
+          // Render user bubble
+          const userBubble = document.createElement("div");
+          userBubble.className = "message user";
+          userBubble.innerText = message;
+          chatContainer.appendChild(userBubble);
+          chatContainer.scrollTop = chatContainer.scrollHeight;
+
+          try {
+            const res = await fetch("http://127.0.0.1:5000/chat", {
+              method: "POST",
+              headers: { "Content-Type": "application/json" },
+              body: JSON.stringify({ message }),
+            });
+
+            if (!res.ok) {
+              const text = await res.text();
+              console.error("Server error:", res.status, text);
+              alert("Error sending chat message. Check console.");
+              return;
+            }
+
+            const data = await res.json();
+
+            // Render assistant bubble
+            const botBubble = document.createElement("div");
+            botBubble.className = "message bot";
+            botBubble.innerText = data.response;
+            chatContainer.appendChild(botBubble);
+            chatContainer.scrollTop = chatContainer.scrollHeight;
+          } catch (err) {
+            console.error("Error sending chat message:", err);
+            alert("Error sending chat message. Check console.");
+          }
+        }
+
+        // Send button click
+        sendBtn.addEventListener("click", () => {
+          const message = chatInput.value;
+          chatInput.value = "";
+          sendMessage(message);
+        });
+
+        // Enter key triggers send
+        chatInput.addEventListener("keypress", (e) => {
+          if (e.key === "Enter") {
+            e.preventDefault();
+            sendBtn.click();
+          }
+        });
+
+        // Auto-focus input on load
+        chatInput.focus();
+      });
+    </script>
+  </body>
+</html>

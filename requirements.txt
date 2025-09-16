@@ -1,0 +1,14 @@
+openai
+python-dotenv
+rapidfuzz
+pdfplumber
+pytesseract
+pillow
+scikit-learn
+seaborn
+joblib
+pandas
+matplotlib
+imblearn
+flask
+flask_cors

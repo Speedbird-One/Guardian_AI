@@ -1,0 +1,2290 @@
+{
+  "conditions": [
+    {
+      "name": "Common Cold",
+      "symptoms": [
+        {
+          "name": "cough",
+          "weight": 1
+        },
+        {
+          "name": "sore throat",
+          "weight": 1
+        },
+        {
+          "name": "runny nose",
+          "weight": 1
+        },
+        {
+          "name": "sneezing",
+          "weight": 1
+        },
+        {
+          "name": "mild fever",
+          "weight": 1
+        },
+        {
+          "name": "congestion",
+          "weight": 1
+        }
+      ],
+      "severity": "Likely mild/self-care",
+      "description": "A mild viral infection of the upper respiratory tract causing congestion and sore throat.",
+      "precautions": [
+        "Rest",
+        "Stay hydrated",
+        "Avoid close contact with others",
+        "Warm fluids and steam inhalation"
+      ],
+      "medications": [
+        "Paracetamol for fever/ache",
+        "Throat lozenges",
+        "OTC cough syrup"
+      ]
+    },
+    {
+      "name": "Viral Fever",
+      "symptoms": [
+        {
+          "name": "fever",
+          "weight": 1
+        },
+        {
+          "name": "body ache",
+          "weight": 1
+        },
+        {
+          "name": "fatigue",
+          "weight": 1
+        },
+        {
+          "name": "headache",
+          "weight": 1
+        }
+      ],
+      "severity": "Likely mild/self-care",
+      "description": "A short-term febrile illness caused by common viruses; usually self-limiting.",
+      "precautions": [
+        "Rest",
+        "Hydration",
+        "Monitor symptoms for worsening"
+      ],
+      "medications": [
+        "Paracetamol for fever",
+        "ORS if dehydrated"
+      ]
+    },
+    {
+      "name": "Influenza (Flu)",
+      "symptoms": [
+        {
+          "name": "high fever",
+          "weight": 2
+        },
+        {
+          "name": "chills",
+          "weight": 2
+        },
+        {
+          "name": "muscle aches",
+          "weight": 2
+        },
+        {
+          "name": "fatigue",
+          "weight": 1
+        },
+        {
+          "name": "cough",
+          "weight": 1
+        },
+        {
+          "name": "headache",
+          "weight": 1
+        }
+      ],
+      "severity": "See a doctor soon",
+      "description": "A contagious respiratory viral infection with systemic symptoms that can be severe in some people.",
+      "precautions": [
+        "Isolate while infectious",
+        "Stay hydrated",
+        "Seek care if shortness of breath or worsening symptoms"
+      ],
+      "medications": [
+        "Paracetamol/acetaminophen for fever",
+        "OTC cough remedies",
+        "Antivirals are prescription if indicated"
+      ]
+    },
+    {
+      "name": "COVID-19",
+      "symptoms": [
+        {
+          "name": "fever",
+          "weight": 1
+        },
+        {
+          "name": "dry cough",
+          "weight": 1
+        },
+        {
+          "name": "loss of taste",
+          "weight": 4
+        },
+        {
+          "name": "loss of smell",
+          "weight": 4
+        },
+        {
+          "name": "shortness of breath",
+          "weight": 4
+        },
+        {
+          "name": "fatigue",
+          "weight": 1
+        }
+      ],
+      "severity": "See a doctor soon",
+      "description": "Respiratory infection by SARS-CoV-2; severity ranges from mild to life-threatening.",
+      "precautions": [
+        "Isolate if symptomatic",
+        "Wear a mask",
+        "Seek urgent care for breathing difficulty"
+      ],
+      "medications": [
+        "Paracetamol for fever",
+        "Supportive care; antivirals/monoclonal antibodies are doctor-prescribed"
+      ]
+    },
+    {
+      "name": "Malaria",
+      "symptoms": [
+        {
+          "name": "fever",
+          "weight": 1
+        },
+        {
+          "name": "chills",
+          "weight": 2
+        },
+        {
+          "name": "sweating",
+          "weight": 2
+        },
+        {
+          "name": "cyclical fever pattern",
+          "weight": 4
+        },
+        {
+          "name": "headache",
+          "weight": 1
+        },
+        {
+          "name": "nausea",
+          "weight": 1
+        }
+      ],
+      "severity": "See a doctor soon",
+      "description": "Mosquito-borne parasitic infection often causing high fevers and cyclical fever patterns; diagnosis requires blood test.",
+      "precautions": [
+        "Get blood tests (malaria smear/rapid test) promptly",
+        "Use mosquito control measures"
+      ],
+      "medications": [
+        "Antimalarial drugs (doctor-prescribed; e.g., artemisinin-based therapies)"
+      ]
+    },
+    {
+      "name": "Dengue Fever",
+      "symptoms": [
+        {
+          "name": "high fever",
+          "weight": 1
+        },
+        {
+          "name": "severe joint pain",
+          "weight": 3
+        },
+        {
+          "name": "rash",
+          "weight": 2
+        },
+        {
+          "name": "headache",
+          "weight": 1
+        },
+        {
+          "name": "bleeding gums",
+          "weight": 4
+        },
+        {
+          "name": "low platelet count",
+          "weight": 5
+        }
+      ],
+      "severity": "Emergency",
+      "description": "Mosquito-borne viral infection that can cause hemorrhagic complications and low platelets; needs monitoring.",
+      "precautions": [
+        "Seek medical evaluation and CBC to check platelets",
+        "Avoid NSAIDs (ibuprofen/aspirin) due to bleeding risk"
+      ],
+      "medications": [
+        "Paracetamol for fever; avoid NSAIDs; supportive care in hospital if severe"
+      ]
+    },
+    {
+      "name": "Yellow Fever",
+      "symptoms": [
+        {
+          "name": "fever",
+          "weight": 1
+        },
+        {
+          "name": "jaundice",
+          "weight": 5
+        },
+        {
+          "name": "dark urine",
+          "weight": 3
+        },
+        {
+          "name": "muscle pain",
+          "weight": 2
+        },
+        {
+          "name": "vomiting",
+          "weight": 2
+        }
+      ],
+      "severity": "Emergency",
+      "description": "A mosquito-borne viral disease that can cause jaundice and multi-organ failure; severe cases are life-threatening.",
+      "precautions": [
+        "Seek urgent medical care",
+        "Avoid mosquito exposure; vaccination prevents disease"
+      ],
+      "medications": [
+        "Supportive care only; no specific antiviral (hospital care required)"
+      ]
+    },
+    {
+      "name": "Typhoid Fever",
+      "symptoms": [
+        {
+          "name": "prolonged fever",
+          "weight": 2
+        },
+        {
+          "name": "abdominal pain",
+          "weight": 2
+        },
+        {
+          "name": "constipation",
+          "weight": 2
+        },
+        {
+          "name": "headache",
+          "weight": 1
+        },
+        {
+          "name": "splenomegaly",
+          "weight": 3
+        }
+      ],
+      "severity": "See a doctor soon",
+      "description": "Systemic bacterial infection commonly due to Salmonella typhi; typically from contaminated food/water.",
+      "precautions": [
+        "Seek medical testing and hygiene measures",
+        "Drink clean water"
+      ],
+      "medications": [
+        "Antibiotics are doctor-prescribed; supportive care (paracetamol)"
+      ]
+    },
+    {
+      "name": "Hepatitis A",
+      "symptoms": [
+        {
+          "name": "fever",
+          "weight": 1
+        },
+        {
+          "name": "fatigue",
+          "weight": 2
+        },
+        {
+          "name": "abdominal pain",
+          "weight": 2
+        },
+        {
+          "name": "jaundice",
+          "weight": 5
+        },
+        {
+          "name": "dark urine",
+          "weight": 3
+        }
+      ],
+      "severity": "See a doctor soon",
+      "description": "Acute viral liver infection usually from contaminated food/water, often causes jaundice.",
+      "precautions": [
+        "Avoid alcohol",
+        "Rest and hydration",
+        "Good hygiene"
+      ],
+      "medications": [
+        "Supportive care; no specific antiviral (doctor follow-up recommended)"
+      ]
+    },
+    {
+      "name": "Hepatitis B",
+      "symptoms": [
+        {
+          "name": "jaundice",
+          "weight": 5
+        },
+        {
+          "name": "fatigue",
+          "weight": 2
+        },
+        {
+          "name": "abdominal pain",
+          "weight": 2
+        },
+        {
+          "name": "dark urine",
+          "weight": 3
+        },
+        {
+          "name": "loss of appetite",
+          "weight": 1
+        }
+      ],
+      "severity": "See a doctor soon",
+      "description": "Viral infection of the liver that can be acute or chronic; transmitted via blood and bodily fluids.",
+      "precautions": [
+        "Avoid alcohol",
+        "Vaccination helps prevention",
+        "Follow-up and monitoring of liver function"
+      ],
+      "medications": [
+        "Antivirals for chronic cases (doctor-prescribed); supportive care"
+      ]
+    },
+    {
+      "name": "Hepatitis C",
+      "symptoms": [
+        {
+          "name": "fatigue",
+          "weight": 2
+        },
+        {
+          "name": "jaundice",
+          "weight": 5
+        },
+        {
+          "name": "abdominal discomfort",
+          "weight": 2
+        },
+        {
+          "name": "dark urine",
+          "weight": 3
+        }
+      ],
+      "severity": "See a doctor soon",
+      "description": "Viral liver infection that often becomes chronic; screening and antiviral treatments exist.",
+      "precautions": [
+        "Avoid alcohol",
+        "Seek specialist evaluation",
+        "Practice safe blood exposure precautions"
+      ],
+      "medications": [
+        "Antiviral therapy (doctor-prescribed)"
+      ]
+    },
+    {
+      "name": "Pneumonia",
+      "symptoms": [
+        {
+          "name": "fever",
+          "weight": 1
+        },
+        {
+          "name": "productive cough",
+          "weight": 2
+        },
+        {
+          "name": "shortness of breath",
+          "weight": 4
+        },
+        {
+          "name": "chest pain",
+          "weight": 3
+        },
+        {
+          "name": "tachypnea",
+          "weight": 3
+        }
+      ],
+      "severity": "Emergency",
+      "description": "Infection of the lung air sacs causing cough, fever, and breathing difficulty; can be bacterial or viral.",
+      "precautions": [
+        "Seek medical care promptly",
+        "Rest and hydration",
+        "Monitor oxygen saturation if available"
+      ],
+      "medications": [
+        "Antibiotics if bacterial (doctor-prescribed), paracetamol for fever"
+      ]
+    },
+    {
+      "name": "Bronchitis",
+      "symptoms": [
+        {
+          "name": "persistent cough",
+          "weight": 2
+        },
+        {
+          "name": "mucus production",
+          "weight": 1
+        },
+        {
+          "name": "chest discomfort",
+          "weight": 2
+        },
+        {
+          "name": "shortness of breath",
+          "weight": 2
+        }
+      ],
+      "severity": "See a doctor soon",
+      "description": "Inflammation of bronchial tubes, often follows a viral infection; symptoms include cough and sputum.",
+      "precautions": [
+        "Avoid smoking and irritants",
+        "Rest and hydration"
+      ],
+      "medications": [
+        "Cough syrups (OTC), paracetamol for fever; antibiotics if bacterial (doctor-prescribed)"
+      ]
+    },
+    {
+      "name": "Tuberculosis (TB)",
+      "symptoms": [
+        {
+          "name": "persistent cough",
+          "weight": 2
+        },
+        {
+          "name": "night sweats",
+          "weight": 3
+        },
+        {
+          "name": "weight loss",
+          "weight": 3
+        },
+        {
+          "name": "fever",
+          "weight": 1
+        },
+        {
+          "name": "blood in sputum",
+          "weight": 5
+        }
+      ],
+      "severity": "Emergency",
+      "description": "Bacterial infection (Mycobacterium tuberculosis) primarily affecting lungs but may be systemic; requires long-term treatment.",
+      "precautions": [
+        "Seek immediate medical assessment and testing",
+        "Isolation until non-infectious in some cases"
+      ],
+      "medications": [
+        "Standard multi-drug anti-TB therapy (doctor-prescribed)"
+      ]
+    },
+    {
+      "name": "Gastroenteritis (Stomach Flu)",
+      "symptoms": [
+        {
+          "name": "diarrhea",
+          "weight": 2
+        },
+        {
+          "name": "vomiting",
+          "weight": 2
+        },
+        {
+          "name": "abdominal cramps",
+          "weight": 2
+        },
+        {
+          "name": "fever",
+          "weight": 1
+        },
+        {
+          "name": "dehydration",
+          "weight": 4
+        }
+      ],
+      "severity": "Likely mild/self-care",
+      "description": "Inflammation of stomach and intestines, usually viral, causing vomiting and diarrhea.",
+      "precautions": [
+        "Hydrate (ORS) frequently",
+        "Avoid solid foods initially",
+        "Seek care if dehydrated or bloody stools"
+      ],
+      "medications": [
+        "Oral rehydration salts (ORS), paracetamol for fever; antiemetics/antidiarrheals per doctor advice"
+      ]
+    },
+    {
+      "name": "Food Poisoning",
+      "symptoms": [
+        {
+          "name": "nausea",
+          "weight": 1
+        },
+        {
+          "name": "vomiting",
+          "weight": 2
+        },
+        {
+          "name": "diarrhea",
+          "weight": 2
+        },
+        {
+          "name": "abdominal pain",
+          "weight": 2
+        },
+        {
+          "name": "fever",
+          "weight": 1
+        }
+      ],
+      "severity": "Likely mild/self-care",
+      "description": "Illness after ingesting contaminated food or drink leading to acute GI symptoms.",
+      "precautions": [
+        "Hydration",
+        "Avoid suspect food sources",
+        "Seek care if high fever or persistent symptoms"
+      ],
+      "medications": [
+        "ORS, paracetamol; activated charcoal only in specific cases (doctor guidance)"
+      ]
+    },
+    {
+      "name": "Appendicitis",
+      "symptoms": [
+        {
+          "name": "abdominal pain (lower right)",
+          "weight": 5
+        },
+        {
+          "name": "nausea",
+          "weight": 2
+        },
+        {
+          "name": "loss of appetite",
+          "weight": 2
+        },
+        {
+          "name": "fever",
+          "weight": 2
+        },
+        {
+          "name": "rebound tenderness",
+          "weight": 5
+        }
+      ],
+      "severity": "Emergency",
+      "description": "Inflammation of the appendix causing severe localized abdominal pain; may require urgent surgery.",
+      "precautions": [
+        "Seek emergency medical care immediately",
+        "Do not eat/drink if rupture is suspected"
+      ],
+      "medications": [
+        "Definitive treatment is surgical (appendectomy); analgesia and antibiotics under medical supervision"
+      ]
+    },
+    {
+      "name": "Gallstones / Cholelithiasis",
+      "symptoms": [
+        {
+          "name": "upper right abdominal pain",
+          "weight": 3
+        },
+        {
+          "name": "nausea",
+          "weight": 1
+        },
+        {
+          "name": "vomiting",
+          "weight": 1
+        },
+        {
+          "name": "pain after fatty meal",
+          "weight": 3
+        }
+      ],
+      "severity": "See a doctor soon",
+      "description": "Solid deposits in the gallbladder that can cause biliary colic and complications.",
+      "precautions": [
+        "Avoid heavy fatty meals",
+        "Seek evaluation for recurrent severe pain"
+      ],
+      "medications": [
+        "Pain relief (OTC) for acute pain; surgery may be recommended (doctor)"
+      ]
+    },
+    {
+      "name": "Urinary Tract Infection (UTI)",
+      "symptoms": [
+        {
+          "name": "burning urination",
+          "weight": 3
+        },
+        {
+          "name": "frequent urination",
+          "weight": 2
+        },
+        {
+          "name": "pelvic pain",
+          "weight": 2
+        },
+        {
+          "name": "cloudy urine",
+          "weight": 2
+        }
+      ],
+      "severity": "See a doctor soon",
+      "description": "Bacterial infection of the urinary tract causing dysuria and urgency; often needs antibiotics.",
+      "precautions": [
+        "Hydrate",
+        "Maintain hygiene",
+        "Seek testing and treatment"
+      ],
+      "medications": [
+        "Antibiotics (doctor-prescribed); cranberry products are supportive"
+      ]
+    },
+    {
+      "name": "Kidney Stones",
+      "symptoms": [
+        {
+          "name": "severe flank pain",
+          "weight": 4
+        },
+        {
+          "name": "blood in urine",
+          "weight": 4
+        },
+        {
+          "name": "nausea",
+          "weight": 1
+        },
+        {
+          "name": "painful urination",
+          "weight": 2
+        }
+      ],
+      "severity": "See a doctor soon",
+      "description": "Hard mineral deposits in kidneys causing severe colicky pain; may require intervention if large.",
+      "precautions": [
+        "Hydrate heavily",
+        "Seek medical evaluation for severe pain or obstruction"
+      ],
+      "medications": [
+        "Pain relievers (OTC), tamsulosin or other therapies may be prescribed by doctor"
+      ]
+    },
+    {
+      "name": "Migraine",
+      "symptoms": [
+        {
+          "name": "severe headache",
+          "weight": 3
+        },
+        {
+          "name": "nausea",
+          "weight": 2
+        },
+        {
+          "name": "sensitivity to light",
+          "weight": 3
+        },
+        {
+          "name": "sensitivity to sound",
+          "weight": 3
+        },
+        {
+          "name": "visual aura",
+          "weight": 4
+        }
+      ],
+      "severity": "See a doctor soon",
+      "description": "Recurrent, often unilateral throbbing headaches with associated nausea and light sensitivity.",
+      "precautions": [
+        "Rest in a dark quiet place",
+        "Avoid triggers",
+        "Keep headache diary"
+      ],
+      "medications": [
+        "Paracetamol/ibuprofen for mild attacks; triptans and preventive meds are doctor-prescribed"
+      ]
+    },
+    {
+      "name": "Tension Headache",
+      "symptoms": [
+        {
+          "name": "headache",
+          "weight": 1
+        },
+        {
+          "name": "pressure around forehead",
+          "weight": 1
+        },
+        {
+          "name": "neck pain",
+          "weight": 1
+        }
+      ],
+      "severity": "Likely mild/self-care",
+      "description": "Common headache type related to muscle tension and stress.",
+      "precautions": [
+        "Stress management",
+        "Posture correction",
+        "Regular sleep routine"
+      ],
+      "medications": [
+        "Paracetamol or NSAIDs (ibuprofen) for pain relief"
+      ]
+    },
+    {
+      "name": "Meningitis",
+      "symptoms": [
+        {
+          "name": "high fever",
+          "weight": 2
+        },
+        {
+          "name": "neck stiffness",
+          "weight": 5
+        },
+        {
+          "name": "severe headache",
+          "weight": 3
+        },
+        {
+          "name": "photophobia",
+          "weight": 3
+        },
+        {
+          "name": "altered mental status",
+          "weight": 5
+        }
+      ],
+      "severity": "Emergency",
+      "description": "Inflammation of the brain/spinal cord membranes often due to infection; can be rapidly life-threatening.",
+      "precautions": [
+        "Seek immediate emergency evaluation",
+        "Isolation as required depending on cause"
+      ],
+      "medications": [
+        "Urgent hospital care; IV antibiotics/antivirals as indicated (doctor-prescribed)"
+      ]
+    },
+    {
+      "name": "Sepsis / Systemic Infection",
+      "symptoms": [
+        {
+          "name": "high fever",
+          "weight": 2
+        },
+        {
+          "name": "rapid heartbeat",
+          "weight": 3
+        },
+        {
+          "name": "rapid breathing",
+          "weight": 3
+        },
+        {
+          "name": "confusion",
+          "weight": 5
+        },
+        {
+          "name": "low blood pressure",
+          "weight": 5
+        }
+      ],
+      "severity": "Emergency",
+      "description": "Life-threatening organ dysfunction caused by a dysregulated host response to infection.",
+      "precautions": [
+        "Seek emergency care immediately",
+        "Do not delay antibiotics if sepsis suspected"
+      ],
+      "medications": [
+        "Immediate IV antibiotics and supportive care in hospital (doctor-prescribed)"
+      ]
+    },
+    {
+      "name": "Allergic Rhinitis (Hay Fever)",
+      "symptoms": [
+        {
+          "name": "sneezing",
+          "weight": 2
+        },
+        {
+          "name": "runny nose",
+          "weight": 1
+        },
+        {
+          "name": "itchy eyes",
+          "weight": 2
+        },
+        {
+          "name": "nasal congestion",
+          "weight": 1
+        }
+      ],
+      "severity": "Likely mild/self-care",
+      "description": "Allergic inflammation of nasal mucosa due to pollen, dust, or other allergens.",
+      "precautions": [
+        "Avoid known allergens",
+        "Keep indoor air filtered during pollen season"
+      ],
+      "medications": [
+        "Antihistamines (OTC), nasal steroid sprays (OTC/doctor)"
+      ]
+    },
+    {
+      "name": "Sinusitis",
+      "symptoms": [
+        {
+          "name": "facial pain/pressure",
+          "weight": 3
+        },
+        {
+          "name": "nasal congestion",
+          "weight": 1
+        },
+        {
+          "name": "post-nasal drip",
+          "weight": 2
+        },
+        {
+          "name": "loss of smell",
+          "weight": 2
+        }
+      ],
+      "severity": "Likely mild/self-care",
+      "description": "Inflammation or infection of the sinuses causing facial pressure and nasal symptoms.",
+      "precautions": [
+        "Steam inhalation",
+        "Saline nasal rinses",
+        "Seek care if symptoms >10 days or severe"
+      ],
+      "medications": [
+        "Decongestants (short term), paracetamol for pain; antibiotics if bacterial (doctor-prescribed)"
+      ]
+    },
+    {
+      "name": "Conjunctivitis (Pink Eye)",
+      "symptoms": [
+        {
+          "name": "red eyes",
+          "weight": 2
+        },
+        {
+          "name": "itchy eyes",
+          "weight": 2
+        },
+        {
+          "name": "watery discharge",
+          "weight": 1
+        },
+        {
+          "name": "matted eyelids",
+          "weight": 2
+        }
+      ],
+      "severity": "Likely mild/self-care",
+      "description": "Inflammation of the conjunctiva due to infection or allergies.",
+      "precautions": [
+        "Avoid touching eyes",
+        "Use separate towels and pillows",
+        "Seek care if vision changes"
+      ],
+      "medications": [
+        "Artificial tears (OTC); antibiotic drops if bacterial (doctor-prescribed)"
+      ]
+    },
+    {
+      "name": "Otitis Media (Middle Ear Infection)",
+      "symptoms": [
+        {
+          "name": "ear pain",
+          "weight": 3
+        },
+        {
+          "name": "hearing loss",
+          "weight": 2
+        },
+        {
+          "name": "fever",
+          "weight": 1
+        },
+        {
+          "name": "ear discharge",
+          "weight": 3
+        }
+      ],
+      "severity": "See a doctor soon",
+      "description": "Infection of the middle ear common in children; causes pain and sometimes discharge.",
+      "precautions": [
+        "Avoid inserting objects into ear",
+        "Keep ear dry"
+      ],
+      "medications": [
+        "Paracetamol for pain; antibiotics if bacterial (doctor-prescribed)"
+      ]
+    },
+    {
+      "name": "Tonsillitis / Pharyngitis",
+      "symptoms": [
+        {
+          "name": "sore throat",
+          "weight": 2
+        },
+        {
+          "name": "pain on swallowing",
+          "weight": 2
+        },
+        {
+          "name": "fever",
+          "weight": 1
+        },
+        {
+          "name": "swollen tonsils",
+          "weight": 3
+        }
+      ],
+      "severity": "Likely mild/self-care",
+      "description": "Inflammation of the throat/tonsils often from viral causes but can be bacterial (strep).",
+      "precautions": [
+        "Gargle warm salt water",
+        "Rest voice",
+        "Seek testing if severe or persistent"
+      ],
+      "medications": [
+        "Paracetamol for pain/fever; antibiotics if bacterial (doctor-prescribed after testing)"
+      ]
+    },
+    {
+      "name": "Strep Throat",
+      "symptoms": [
+        {
+          "name": "severe sore throat",
+          "weight": 3
+        },
+        {
+          "name": "fever",
+          "weight": 2
+        },
+        {
+          "name": "swollen tender lymph nodes",
+          "weight": 3
+        },
+        {
+          "name": "white patches on tonsils",
+          "weight": 4
+        }
+      ],
+      "severity": "See a doctor soon",
+      "description": "Bacterial throat infection (Group A strep) that generally responds to antibiotics.",
+      "precautions": [
+        "Seek testing (throat swab)",
+        "Avoid spread via respiratory droplets"
+      ],
+      "medications": [
+        "Antibiotics (doctor-prescribed); paracetamol for pain"
+      ]
+    },
+    {
+      "name": "Bronchiectasis / chronic bronchitis (COPD)",
+      "symptoms": [
+        {
+          "name": "chronic productive cough",
+          "weight": 3
+        },
+        {
+          "name": "recurrent respiratory infections",
+          "weight": 3
+        },
+        {
+          "name": "shortness of breath",
+          "weight": 4
+        },
+        {
+          "name": "wheezing",
+          "weight": 2
+        }
+      ],
+      "severity": "Chronic",
+      "description": "Chronic obstructive airway disease causing persistent cough and breathlessness; commonly due to smoking or long-term exposure.",
+      "precautions": [
+        "Quit smoking",
+        "Regular pulmonary follow-up",
+        "Vaccinations (flu, pneumococcal)"
+      ],
+      "medications": [
+        "Inhaled bronchodilators/steroids (doctor-prescribed); pulmonary rehab"
+      ]
+    },
+    {
+      "name": "Asthma (Acute / Chronic)",
+      "symptoms": [
+        {
+          "name": "wheezing",
+          "weight": 3
+        },
+        {
+          "name": "shortness of breath",
+          "weight": 4
+        },
+        {
+          "name": "chest tightness",
+          "weight": 3
+        },
+        {
+          "name": "cough (especially at night)",
+          "weight": 2
+        }
+      ],
+      "severity": "Chronic",
+      "description": "Airway hyperreactivity causing episodic wheeze and breathlessness; can be life-threatening in severe attacks.",
+      "precautions": [
+        "Avoid known triggers",
+        "Have inhaler/plan ready",
+        "Seek emergency care for severe breathing difficulty"
+      ],
+      "medications": [
+        "Short-acting bronchodilators (salbutamol inhaler; doctor-prescribed), inhaled steroids (doctor-prescribed)"
+      ]
+    },
+    {
+      "name": "Pleurisy / Pulmonary Embolism (red flag)",
+      "symptoms": [
+        {
+          "name": "sudden chest pain",
+          "weight": 5
+        },
+        {
+          "name": "shortness of breath",
+          "weight": 5
+        },
+        {
+          "name": "rapid heartbeat",
+          "weight": 4
+        },
+        {
+          "name": "sudden collapse",
+          "weight": 5
+        }
+      ],
+      "severity": "Emergency",
+      "description": "Severe causes of chest pain and breathlessness (e.g., pulmonary embolism) requiring urgent evaluation.",
+      "precautions": [
+        "Seek emergency care immediately"
+      ],
+      "medications": [
+        "Emergency hospital treatment (anticoagulation, thrombolysis)"
+      ]
+    },
+    {
+      "name": "Hypertension (High Blood Pressure)",
+      "symptoms": [
+        {
+          "name": "headache",
+          "weight": 1
+        },
+        {
+          "name": "dizziness",
+          "weight": 1
+        },
+        {
+          "name": "blurred vision",
+          "weight": 2
+        },
+        {
+          "name": "chest pain",
+          "weight": 3
+        }
+      ],
+      "severity": "Chronic",
+      "description": "Persistently elevated arterial blood pressure increasing cardiovascular risk over time.",
+      "precautions": [
+        "Lifestyle changes (diet, exercise, reduce salt)",
+        "Regular BP monitoring"
+      ],
+      "medications": [
+        "Antihypertensive medications (doctor-prescribed)"
+      ]
+    },
+    {
+      "name": "Heart Attack (Myocardial Infarction)",
+      "symptoms": [
+        {
+          "name": "central crushing chest pain",
+          "weight": 5
+        },
+        {
+          "name": "radiating arm or jaw pain",
+          "weight": 4
+        },
+        {
+          "name": "shortness of breath",
+          "weight": 4
+        },
+        {
+          "name": "cold sweat",
+          "weight": 3
+        },
+        {
+          "name": "nausea",
+          "weight": 2
+        }
+      ],
+      "severity": "Emergency",
+      "description": "Acute blockage of coronary blood flow leading to heart muscle damage; immediate treatment needed.",
+      "precautions": [
+        "Call emergency services immediately",
+        "Chew aspirin if advised and not allergic"
+      ],
+      "medications": [
+        "Emergency hospital interventions (PCI/thrombolysis); aspirin while waiting if appropriate"
+      ]
+    },
+    {
+      "name": "Stroke (Ischemic / Hemorrhagic)",
+      "symptoms": [
+        {
+          "name": "sudden weakness of face/arm/leg",
+          "weight": 5
+        },
+        {
+          "name": "slurred speech",
+          "weight": 5
+        },
+        {
+          "name": "sudden vision loss",
+          "weight": 4
+        },
+        {
+          "name": "sudden severe headache",
+          "weight": 5
+        }
+      ],
+      "severity": "Emergency",
+      "description": "Acute interruption of blood flow to parts of the brain causing neurological deficits; time-sensitive treatment.",
+      "precautions": [
+        "Seek immediate emergency care (time-critical)"
+      ],
+      "medications": [
+        "Emergency thrombolysis/intervention per hospital protocols"
+      ]
+    },
+    {
+      "name": "Diabetes Mellitus (Type 2)",
+      "symptoms": [
+        {
+          "name": "increased thirst",
+          "weight": 2
+        },
+        {
+          "name": "frequent urination",
+          "weight": 2
+        },
+        {
+          "name": "fatigue",
+          "weight": 1
+        },
+        {
+          "name": "blurred vision",
+          "weight": 2
+        },
+        {
+          "name": "slow wound healing",
+          "weight": 3
+        }
+      ],
+      "severity": "Chronic",
+      "description": "Metabolic disorder with high blood sugar due to insulin resistance or deficiency; requires long-term management.",
+      "precautions": [
+        "Monitor blood glucose",
+        "Diet/exercise",
+        "Regular medical follow-up"
+      ],
+      "medications": [
+        "Lifestyle changes; metformin and other medications are doctor-prescribed"
+      ]
+    },
+    {
+      "name": "Hypoglycemia (Low Blood Sugar)",
+      "symptoms": [
+        {
+          "name": "shakiness",
+          "weight": 3
+        },
+        {
+          "name": "sweating",
+          "weight": 3
+        },
+        {
+          "name": "confusion",
+          "weight": 4
+        },
+        {
+          "name": "rapid heartbeat",
+          "weight": 2
+        }
+      ],
+      "severity": "Emergency",
+      "description": "Dangerously low blood sugar causing neuroglycopenic symptoms; common in diabetics on insulin or sulfonylureas.",
+      "precautions": [
+        "Treat immediately with fast-acting carbohydrate",
+        "Seek medical care if unconscious"
+      ],
+      "medications": [
+        "Oral glucose or glucose gel; IV dextrose in severe cases (medical supervision)"
+      ]
+    },
+    {
+      "name": "Iron Deficiency Anemia",
+      "symptoms": [
+        {
+          "name": "fatigue",
+          "weight": 2
+        },
+        {
+          "name": "pale skin",
+          "weight": 3
+        },
+        {
+          "name": "shortness of breath on exertion",
+          "weight": 2
+        },
+        {
+          "name": "dizziness",
+          "weight": 2
+        }
+      ],
+      "severity": "See a doctor soon",
+      "description": "Low hemoglobin due to iron deficiency causing tiredness and pallor.",
+      "precautions": [
+        "Diet rich in iron",
+        "Check for sources of blood loss",
+        "Medical testing required"
+      ],
+      "medications": [
+        "Oral iron supplements (OTC/doctor-prescribed depending on dose)"
+      ]
+    },
+    {
+      "name": "Normocytic Hypochromic Anemia",
+      "symptoms": [
+        {
+          "name": "fatigue",
+          "weight": 2
+        },
+        {
+          "name": "pale skin",
+          "weight": 2
+        },
+        {
+          "name": "shortness of breath",
+          "weight": 2
+        },
+        {
+          "name": "dizziness",
+          "weight": 1
+        }
+      ],
+      "severity": "moderate",
+      "description": "A type of anemia where red blood cells are of normal size but have reduced hemoglobin concentration.",
+      "precautions": [
+        "Balanced iron-rich diet",
+        "Avoid excessive blood donation",
+        "Regular monitoring of hemoglobin levels"
+      ],
+      "medications": [
+        "Iron supplements",
+        "Vitamin B complex",
+        "Treatment of underlying cause"
+      ]
+    },
+    {
+      "name": "Other Microcytic Anemia",
+      "symptoms": [
+        {
+          "name": "fatigue",
+          "weight": 2
+        },
+        {
+          "name": "weakness",
+          "weight": 2
+        },
+        {
+          "name": "pale skin",
+          "weight": 2
+        },
+        {
+          "name": "shortness of breath",
+          "weight": 1
+        }
+      ],
+      "severity": "moderate",
+      "description": "Anemia characterized by abnormally small red blood cells often due to iron deficiency or chronic disease.",
+      "precautions": [
+        "Iron-rich foods (green vegetables, meat, legumes)",
+        "Regular monitoring of blood counts"
+      ],
+      "medications": [
+        "Iron therapy",
+        "Folic acid supplementation"
+      ]
+    },
+    {
+      "name": "Leukemia",
+      "symptoms": [
+        {
+          "name": "fatigue",
+          "weight": 2
+        },
+        {
+          "name": "frequent infections",
+          "weight": 3
+        },
+        {
+          "name": "easy bruising",
+          "weight": 2
+        },
+        {
+          "name": "bleeding gums",
+          "weight": 2
+        },
+        {
+          "name": "fever",
+          "weight": 1
+        },
+        {
+          "name": "weight loss",
+          "weight": 2
+        }
+      ],
+      "severity": "severe",
+      "description": "A type of blood cancer affecting the bone marrow and white blood cells, leading to increased risk of infection and bleeding.",
+      "precautions": [
+        "Avoid exposure to infections",
+        "Maintain a nutritious diet",
+        "Regular oncology follow-up"
+      ],
+      "medications": [
+        "Chemotherapy",
+        "Targeted therapy",
+        "Bone marrow transplant (in select cases)"
+      ]
+    },
+    {
+      "name": "Thrombocytopenia",
+      "symptoms": [
+        {
+          "name": "easy bruising",
+          "weight": 2
+        },
+        {
+          "name": "prolonged bleeding",
+          "weight": 3
+        },
+        {
+          "name": "nosebleeds",
+          "weight": 2
+        },
+        {
+          "name": "petechiae",
+          "weight": 3
+        },
+        {
+          "name": "fatigue",
+          "weight": 1
+        }
+      ],
+      "severity": "moderate",
+      "description": "A condition with abnormally low platelet count, leading to bleeding tendencies.",
+      "precautions": [
+        "Avoid injury and trauma",
+        "Do not use NSAIDs without consultation",
+        "Monitor platelet counts regularly"
+      ],
+      "medications": [
+        "Corticosteroids",
+        "Platelet transfusion (if severe)",
+        "Treatment of underlying cause"
+      ]
+    },
+    {
+      "name": "Normocytic Normochromic Anemia",
+      "symptoms": [
+        {
+          "name": "fatigue",
+          "weight": 2
+        },
+        {
+          "name": "pale skin",
+          "weight": 2
+        },
+        {
+          "name": "shortness of breath",
+          "weight": 2
+        },
+        {
+          "name": "dizziness",
+          "weight": 1
+        }
+      ],
+      "severity": "moderate",
+      "description": "Anemia where red blood cells are normal in size and hemoglobin concentration but reduced in number. Often associated with chronic diseases.",
+      "precautions": [
+        "Regular monitoring of hemoglobin",
+        "Treat underlying chronic disease"
+      ],
+      "medications": [
+        "Erythropoietin therapy",
+        "Iron and vitamin supplements",
+        "Blood transfusion (if severe)"
+      ]
+    },
+    {
+      "name": "Leukemia with Thrombocytopenia",
+      "symptoms": [
+        {
+          "name": "fatigue",
+          "weight": 2
+        },
+        {
+          "name": "frequent infections",
+          "weight": 3
+        },
+        {
+          "name": "easy bruising",
+          "weight": 3
+        },
+        {
+          "name": "bleeding gums",
+          "weight": 2
+        },
+        {
+          "name": "nosebleeds",
+          "weight": 2
+        },
+        {
+          "name": "petechiae",
+          "weight": 3
+        }
+      ],
+      "severity": "severe",
+      "description": "A hematological malignancy presenting with both abnormal white blood cell proliferation and low platelet count.",
+      "precautions": [
+        "Strict infection control measures",
+        "Avoid trauma",
+        "Oncology consultation"
+      ],
+      "medications": [
+        "Chemotherapy",
+        "Platelet transfusions",
+        "Bone marrow transplant (if indicated)"
+      ]
+    },
+    {
+      "name": "Macrocytic Anemia",
+      "symptoms": [
+        {
+          "name": "fatigue",
+          "weight": 2
+        },
+        {
+          "name": "pale skin",
+          "weight": 2
+        },
+        {
+          "name": "shortness of breath",
+          "weight": 1
+        },
+        {
+          "name": "tingling in hands and feet",
+          "weight": 2
+        },
+        {
+          "name": "glossy tongue",
+          "weight": 2
+        }
+      ],
+      "severity": "moderate",
+      "description": "Anemia with abnormally large red blood cells, often due to vitamin B12 or folate deficiency.",
+      "precautions": [
+        "Balanced diet with B12 and folate",
+        "Limit alcohol intake",
+        "Regular blood monitoring"
+      ],
+      "medications": [
+        "Vitamin B12 injections",
+        "Folic acid supplementation"
+      ]
+    },
+    {
+      "name": "Vitamin D Deficiency",
+      "symptoms": [
+        {
+          "name": "bone pain",
+          "weight": 2
+        },
+        {
+          "name": "muscle weakness",
+          "weight": 2
+        },
+        {
+          "name": "fatigue",
+          "weight": 1
+        }
+      ],
+      "severity": "Likely mild/self-care",
+      "description": "Insufficient vitamin D affecting bone health and muscle function.",
+      "precautions": [
+        "Sun exposure",
+        "Dietary sources and supplements",
+        "Check levels if symptomatic"
+      ],
+      "medications": [
+        "Vitamin D supplements (OTC or as prescribed)"
+      ]
+    },
+    {
+      "name": "Arthritis (Osteoarthritis / Rheumatoid features)",
+      "symptoms": [
+        {
+          "name": "joint pain",
+          "weight": 2
+        },
+        {
+          "name": "stiffness",
+          "weight": 2
+        },
+        {
+          "name": "swelling",
+          "weight": 3
+        },
+        {
+          "name": "reduced mobility",
+          "weight": 2
+        }
+      ],
+      "severity": "Chronic",
+      "description": "Inflammation or wear-and-tear of joints leading to pain and decreased function.",
+      "precautions": [
+        "Exercise, weight management, physiotherapy",
+        "Protect joints"
+      ],
+      "medications": [
+        "Paracetamol/NSAIDs for pain (NSAIDs per doctor guidance); disease-modifying agents are doctor-prescribed"
+      ]
+    },
+    {
+      "name": "Gout",
+      "symptoms": [
+        {
+          "name": "sudden severe joint pain",
+          "weight": 4
+        },
+        {
+          "name": "red swollen joint",
+          "weight": 4
+        },
+        {
+          "name": "usually big toe involvement",
+          "weight": 5
+        }
+      ],
+      "severity": "See a doctor soon",
+      "description": "Arthritic attacks due to uric acid crystal deposition causing severe pain and swelling.",
+      "precautions": [
+        "Avoid high-purine foods and alcohol during attacks",
+        "Seek medical management for recurrent attacks"
+      ],
+      "medications": [
+        "NSAIDs/colchicine for acute attacks (doctor-prescribed guidance recommended); urate-lowering therapy by doctor"
+      ]
+    },
+    {
+      "name": "Psoriasis",
+      "symptoms": [
+        {
+          "name": "red scaly patches",
+          "weight": 3
+        },
+        {
+          "name": "itchiness",
+          "weight": 2
+        },
+        {
+          "name": "plaques on elbows/knees",
+          "weight": 3
+        }
+      ],
+      "severity": "See a doctor soon",
+      "description": "Chronic autoimmune skin condition with raised scaly plaques.",
+      "precautions": [
+        "Moisturize regularly",
+        "Avoid known triggers (stress, certain meds)"
+      ],
+      "medications": [
+        "Topical steroids/coal tar (doctor-prescribed), phototherapy for severe disease"
+      ]
+    },
+    {
+      "name": "Eczema (Atopic Dermatitis)",
+      "symptoms": [
+        {
+          "name": "itchy skin",
+          "weight": 2
+        },
+        {
+          "name": "dry patches",
+          "weight": 2
+        },
+        {
+          "name": "redness",
+          "weight": 2
+        }
+      ],
+      "severity": "Likely mild/self-care",
+      "description": "Chronic itchy inflammatory skin condition often starting in childhood.",
+      "precautions": [
+        "Moisturize regularly",
+        "Avoid irritants and harsh soaps"
+      ],
+      "medications": [
+        "Emollients, topical steroids for flare-ups (doctor guidance)"
+      ]
+    },
+    {
+      "name": "Ringworm (Tinea / Fungal Skin Infection)",
+      "symptoms": [
+        {
+          "name": "circular rash",
+          "weight": 3
+        },
+        {
+          "name": "itching",
+          "weight": 2
+        },
+        {
+          "name": "scaly border",
+          "weight": 3
+        }
+      ],
+      "severity": "Likely mild/self-care",
+      "description": "Superficial fungal infection causing ring-shaped itchy patches on skin.",
+      "precautions": [
+        "Keep area dry",
+        "Avoid sharing towels",
+        "Treat household contacts if needed"
+      ],
+      "medications": [
+        "Topical antifungals (OTC); oral antifungals for extensive disease (doctor-prescribed)"
+      ]
+    },
+    {
+      "name": "Scabies",
+      "symptoms": [
+        {
+          "name": "intense itching (worse at night)",
+          "weight": 4
+        },
+        {
+          "name": "burrow marks",
+          "weight": 4
+        },
+        {
+          "name": "rash in finger webs",
+          "weight": 3
+        }
+      ],
+      "severity": "See a doctor soon",
+      "description": "Infestation of the skin by mites causing severe itch and characteristic burrows.",
+      "precautions": [
+        "Avoid close skin contact until treated",
+        "Wash bedding/clothes in hot water"
+      ],
+      "medications": [
+        "Topical permethrin or oral ivermectin (doctor-prescribed)"
+      ]
+    },
+    {
+      "name": "Chickenpox",
+      "symptoms": [
+        {
+          "name": "itchy vesicular rash",
+          "weight": 3
+        },
+        {
+          "name": "fever",
+          "weight": 2
+        },
+        {
+          "name": "fatigue",
+          "weight": 1
+        }
+      ],
+      "severity": "Likely mild/self-care",
+      "description": "Viral illness causing itchy blister-like rash; often mild in children but potentially severe in adults.",
+      "precautions": [
+        "Avoid scratching",
+        "Isolate until crusted over",
+        "Vaccination prevents disease"
+      ],
+      "medications": [
+        "Paracetamol for fever; calamine lotion and antihistamines for itching; antivirals for severe cases (doctor-prescribed)"
+      ]
+    },
+    {
+      "name": "Measles",
+      "symptoms": [
+        {
+          "name": "fever",
+          "weight": 1
+        },
+        {
+          "name": "rash",
+          "weight": 3
+        },
+        {
+          "name": "cough",
+          "weight": 2
+        },
+        {
+          "name": "conjunctivitis",
+          "weight": 3
+        },
+        {
+          "name": "koplik spots",
+          "weight": 5
+        }
+      ],
+      "severity": "Emergency",
+      "description": "Highly contagious viral infection with fever, cough, conjunctivitis, and a characteristic rash; complications possible.",
+      "precautions": [
+        "Isolate and seek medical care",
+        "Vaccination is preventive"
+      ],
+      "medications": [
+        "Supportive care; vitamin A in some pediatric cases per doctor guidance"
+      ]
+    },
+    {
+      "name": "Mumps",
+      "symptoms": [
+        {
+          "name": "parotid gland swelling",
+          "weight": 4
+        },
+        {
+          "name": "fever",
+          "weight": 1
+        },
+        {
+          "name": "jaw pain",
+          "weight": 3
+        }
+      ],
+      "severity": "See a doctor soon",
+      "description": "Viral illness causing swollen salivary glands; vaccination prevents most cases.",
+      "precautions": [
+        "Isolation until recovered",
+        "Analgesics for pain"
+      ],
+      "medications": [
+        "Paracetamol for fever/pain; supportive care"
+      ]
+    },
+    {
+      "name": "Hand-Foot-and-Mouth Disease",
+      "symptoms": [
+        {
+          "name": "mouth sores",
+          "weight": 3
+        },
+        {
+          "name": "rash on hands and feet",
+          "weight": 3
+        },
+        {
+          "name": "fever",
+          "weight": 1
+        }
+      ],
+      "severity": "Likely mild/self-care",
+      "description": "Common viral illness in children causing mouth ulcers and skin rash.",
+      "precautions": [
+        "Hydration",
+        "Avoid shared utensils",
+        "Seek care if dehydration occurs"
+      ],
+      "medications": [
+        "Paracetamol for fever; topical analgesics for mouth pain"
+      ]
+    },
+    {
+      "name": "Meningitis (bacterial/viral)",
+      "symptoms": [
+        {
+          "name": "neck stiffness",
+          "weight": 5
+        },
+        {
+          "name": "fever",
+          "weight": 2
+        },
+        {
+          "name": "severe headache",
+          "weight": 3
+        },
+        {
+          "name": "photophobia",
+          "weight": 3
+        },
+        {
+          "name": "altered consciousness",
+          "weight": 5
+        }
+      ],
+      "severity": "Emergency",
+      "description": "Inflammation of the meninges often due to infection; can rapidly become life-threatening.",
+      "precautions": [
+        "Seek urgent hospital evaluation",
+        "Do not delay antibiotics if bacterial suspected"
+      ],
+      "medications": [
+        "Hospital IV antibiotics/antivirals and supportive care (doctor-prescribed)"
+      ]
+    },
+    {
+      "name": "Severe Dehydration (from GI loss)",
+      "symptoms": [
+        {
+          "name": "reduced urine output",
+          "weight": 4
+        },
+        {
+          "name": "dry mouth",
+          "weight": 3
+        },
+        {
+          "name": "dizziness",
+          "weight": 3
+        },
+        {
+          "name": "sunken eyes",
+          "weight": 4
+        }
+      ],
+      "severity": "Emergency",
+      "description": "Critical fluid and electrolyte deficit requiring prompt rehydration, sometimes IV in hospital.",
+      "precautions": [
+        "Seek medical care if severe",
+        "Start oral rehydration if conscious"
+      ],
+      "medications": [
+        "Oral rehydration solutions; IV fluids in hospital"
+      ]
+    },
+    {
+      "name": "Urinary Retention / Acute Obstructive Uropathy (red flag)",
+      "symptoms": [
+        {
+          "name": "inability to pass urine",
+          "weight": 5
+        },
+        {
+          "name": "lower abdominal pain",
+          "weight": 3
+        },
+        {
+          "name": "distended bladder",
+          "weight": 4
+        }
+      ],
+      "severity": "Emergency",
+      "description": "Inability to empty bladder often requiring catheterization and urgent assessment.",
+      "precautions": [
+        "Seek urgent medical care",
+        "Do not attempt home catheterization without training"
+      ],
+      "medications": [
+        "Relief measures and urological interventions by physician"
+      ]
+    },
+    {
+      "name": "Depression (Major Depressive Disorder)",
+      "symptoms": [
+        {
+          "name": "persistent sadness",
+          "weight": 3
+        },
+        {
+          "name": "loss of interest",
+          "weight": 3
+        },
+        {
+          "name": "fatigue",
+          "weight": 2
+        },
+        {
+          "name": "sleep disturbances",
+          "weight": 2
+        },
+        {
+          "name": "suicidal thoughts",
+          "weight": 5
+        }
+      ],
+      "severity": "See a doctor soon",
+      "description": "Mood disorder causing persistent low mood and loss of interest; severe cases risk self-harm.",
+      "precautions": [
+        "Seek mental health support",
+        "Monitor safety and suicidality"
+      ],
+      "medications": [
+        "Antidepressants and psychotherapy (doctor-prescribed)"
+      ]
+    },
+    {
+      "name": "Anxiety Disorder",
+      "symptoms": [
+        {
+          "name": "excessive worry",
+          "weight": 3
+        },
+        {
+          "name": "palpitations",
+          "weight": 2
+        },
+        {
+          "name": "sweating",
+          "weight": 1
+        },
+        {
+          "name": "restlessness",
+          "weight": 2
+        }
+      ],
+      "severity": "Likely mild/self-care",
+      "description": "Excessive and persistent worry or fear interfering with daily life.",
+      "precautions": [
+        "Relaxation techniques",
+        "Limit caffeine",
+        "Seek therapy if persistent"
+      ],
+      "medications": [
+        "Psychotherapy and medications (doctor-prescribed) if indicated"
+      ]
+    },
+    {
+      "name": "Insomnia (sleep disturbance)",
+      "symptoms": [
+        {
+          "name": "difficulty falling asleep",
+          "weight": 2
+        },
+        {
+          "name": "waking frequently",
+          "weight": 2
+        },
+        {
+          "name": "daytime fatigue",
+          "weight": 2
+        }
+      ],
+      "severity": "Likely mild/self-care",
+      "description": "Trouble initiating or maintaining sleep leading to daytime impairment.",
+      "precautions": [
+        "Sleep hygiene",
+        "Regular sleep schedule",
+        "Limit screens before bed"
+      ],
+      "medications": [
+        "Short-term sleep aids under doctor guidance; CBT for insomnia recommended"
+      ]
+    },
+    {
+      "name": "Pancreatitis",
+      "symptoms": [
+        {
+          "name": "severe upper abdominal pain",
+          "weight": 5
+        },
+        {
+          "name": "radiating pain to back",
+          "weight": 4
+        },
+        {
+          "name": "nausea/vomiting",
+          "weight": 2
+        },
+        {
+          "name": "fever",
+          "weight": 2
+        }
+      ],
+      "severity": "Emergency",
+      "description": "Inflammation of the pancreas often causing severe abdominal pain and systemic illness.",
+      "precautions": [
+        "Seek urgent medical attention",
+        "Avoid oral intake until assessed"
+      ],
+      "medications": [
+        "Hospital management; analgesia and supportive care (doctor-prescribed)"
+      ]
+    },
+    {
+      "name": "Thyroid Disorders (Hypothyroidism)",
+      "symptoms": [
+        {
+          "name": "fatigue",
+          "weight": 2
+        },
+        {
+          "name": "weight gain",
+          "weight": 2
+        },
+        {
+          "name": "cold intolerance",
+          "weight": 3
+        },
+        {
+          "name": "dry skin",
+          "weight": 2
+        }
+      ],
+      "severity": "See a doctor soon",
+      "description": "Underactive thyroid causing metabolic slowing; diagnosis via blood tests.",
+      "precautions": [
+        "Medical testing (TSH/T4)",
+        "Monitor cholesterol and symptoms"
+      ],
+      "medications": [
+        "Thyroid hormone replacement (doctor-prescribed)"
+      ]
+    },
+    {
+      "name": "Kidney Disease (Chronic Kidney Disease)",
+      "symptoms": [
+        {
+          "name": "fatigue",
+          "weight": 2
+        },
+        {
+          "name": "swelling of legs/ankles",
+          "weight": 3
+        },
+        {
+          "name": "reduced urine output",
+          "weight": 3
+        },
+        {
+          "name": "nausea",
+          "weight": 2
+        }
+      ],
+      "severity": "Chronic",
+      "description": "Progressive loss of kidney function leading to fluid and metabolic disturbances.",
+      "precautions": [
+        "Monitor kidney function tests",
+        "Control blood pressure and sugar",
+        "Dietary adjustments"
+      ],
+      "medications": [
+        "Medications to control BP and progression (doctor-prescribed)"
+      ]
+    },
+    {
+      "name": "Severe Allergic Reaction / Anaphylaxis",
+      "symptoms": [
+        {
+          "name": "sudden difficulty breathing",
+          "weight": 5
+        },
+        {
+          "name": "widespread hives",
+          "weight": 4
+        },
+        {
+          "name": "swelling of face/lips/tongue",
+          "weight": 5
+        },
+        {
+          "name": "hypotension",
+          "weight": 5
+        }
+      ],
+      "severity": "Emergency",
+      "description": "Life-threatening systemic allergic reaction requiring immediate treatment (epinephrine).",
+      "precautions": [
+        "Avoid known allergens",
+        "Carry epinephrine autoinjector if at risk"
+      ],
+      "medications": [
+        "Intramuscular epinephrine immediately (emergency); hospital support required"
+      ]
+    },
+    {
+      "name": "Epilepsy / Seizure Disorder",
+      "symptoms": [
+        {
+          "name": "recurrent seizures",
+          "weight": 5
+        },
+        {
+          "name": "loss of consciousness",
+          "weight": 4
+        },
+        {
+          "name": "rhythmic jerking of limbs",
+          "weight": 4
+        }
+      ],
+      "severity": "See a doctor soon",
+      "description": "Neurological condition with recurrent unprovoked seizures requiring specialist management.",
+      "precautions": [
+        "Safety during seizures",
+        "Avoid certain triggers (sleep deprivation)"
+      ],
+      "medications": [
+        "Antiepileptic drugs (doctor-prescribed)"
+      ]
+    }
+  ],
+  "synonyms": {
+    "fever": [
+      "high temperature",
+      "raised temperature",
+      "pyrexia",
+      "feverish"
+    ],
+    "mild fever": [
+      "low grade fever",
+      "low-grade fever"
+    ],
+    "cough": [
+      "coughing",
+      "dry cough",
+      "wet cough",
+      "productive cough"
+    ],
+    "sore throat": [
+      "throat pain",
+      "throat soreness"
+    ],
+    "shortness of breath": [
+      "breathing difficulty",
+      "breathlessness",
+      "dyspnea"
+    ],
+    "jaundice": [
+      "yellow skin",
+      "yellow eyes",
+      "yellowing of skin",
+      "icterus"
+    ],
+    "yellow skin": [
+      "jaundice",
+      "yellow eyes"
+    ],
+    "blood in urine": [
+      "hematuria",
+      "blood in pee"
+    ],
+    "runny nose": [
+      "rhinorrhea",
+      "runny nose"
+    ],
+    "abdominal pain": [
+      "tummy ache",
+      "stomach pain",
+      "belly pain"
+    ],
+    "abdominal pain (lower right)": [
+      "pain in lower right abdomen",
+      "right lower quadrant pain"
+    ],
+    "diarrhea": [
+      "loose stools",
+      "runny stools",
+      "watery stool"
+    ],
+    "vomiting": [
+      "throwing up",
+      "emesis"
+    ],
+    "headache": [
+      "head pain",
+      "head ache"
+    ],
+    "neck stiffness": [
+      "stiff neck",
+      "neck rigidity"
+    ],
+    "altered mental status": [
+      "confusion",
+      "disorientation",
+      "reduced consciousness"
+    ],
+    "rash": [
+      "skin rash",
+      "red spots"
+    ],
+    "bleeding gums": [
+      "gum bleeding"
+    ],
+    "chest pain": [
+      "chest discomfort",
+      "tightness in chest"
+    ],
+    "dizziness": [
+      "lightheadedness",
+      "vertigo"
+    ],
+    "fatigue": [
+      "tiredness",
+      "exhaustion",
+      "weakness"
+    ],
+    "loss of taste": [
+      "ageusia"
+    ],
+    "loss of smell": [
+      "anosmia"
+    ],
+    "loss of appetite": [
+      "decreased appetite",
+      "reduced appetite"
+    ],
+    "urinary retention": [
+      "unable to pass urine",
+      "can't urinate"
+    ],
+    "ear pain": [
+      "otalgia",
+      "earache"
+    ],
+    "red eyes": [
+      "bloodshot eyes"
+    ]
+  }
+}
