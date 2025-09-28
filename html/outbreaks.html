@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>GUARDIAN.ai • Disease Outbreaks</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: "Segoe UI", Tahoma, sans-serif;
+            background: #0b1e34;
+            color: #fff;
+            height: 100vh;
+            display: flex;
+            font-size: 16px;
+            line-height: 1.6;
+        }
+
+        /* Sidebar */
+        .sidebar {
+            width: 20%;
+            background: #0d182a;
+            display: flex;
+            flex-direction: column;
+            padding: 20px;
+            box-sizing: border-box;
+            border-right: 1px solid #1f4068;
+        }
+
+        .logo {
+            font-size: 22px;
+            font-weight: bold;
+            color: #a8dadc;
+            margin-bottom: 10px;
+        }
+
+        .tagline {
+            font-size: 14px;
+            color: #74c0c9;
+            margin-bottom: 25px;
+        }
+
+        .nav a {
+            text-decoration: none;
+        }
+
+        .nav button {
+            width: 100%;
+            padding: 12px;
+            margin-bottom: 12px;
+            border: none;
+            border-radius: 10px;
+            background: #1e3354;
+            color: #a8dadc;
+            font-size: 16px;
+            text-align: left;
+            cursor: pointer;
+            transition: 0.2s;
+        }
+
+        .nav button:hover,
+        .nav .active {
+            background: #457b9d;
+            color: #fff;
+        }
+
+        .nav-separator {
+            height: 1px;
+            background: #1f4068;
+            margin: 15px 0;
+        }
+
+        .privacy-note {
+            margin-top: auto;
+            font-size: 13px;
+            color: #74c0c9;
+            background: #0f1f36;
+            padding: 10px;
+            border-radius: 8px;
+        }
+
+        /* Content */
+        .content-section {
+            flex: 1;
+            background: #11263f;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .content-header {
+            padding: 12px 20px;
+            background: #0a192f;
+            font-size: 16px;
+            font-weight: 700;
+            color: #a8dadc;
+            border-bottom: 1px solid #1f4068;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .header-right {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .location {
+            font-size: 14px;
+            color: #74c0c9;
+        }
+
+        .language-select {
+            background: #1e3354;
+            color: #a8dadc;
+            border: none;
+            border-radius: 8px;
+            padding: 5px 10px;
+            font-size: 14px;
+            cursor: pointer;
+        }
+
+        .language-select:hover {
+            background: #457b9d;
+            color: #fff;
+        }
+
+        .outbreaks-container {
+            flex: 1;
+            padding: 20px;
+            overflow-y: auto;
+        }
+
+        .outbreaks-section {
+            background: #0f1f36;
+            padding: 15px;
+            border-radius: 10px;
+            margin-bottom: 20px;
+        }
+
+        .outbreaks-section h3 {
+            color: #a8dadc;
+            margin-bottom: 12px;
+            font-size: 22px;
+        }
+
+        .outbreaks-section p,
+        .outbreaks-list {
+            font-size: 16px;
+            line-height: 1.6;
+            color: #fff;
+            margin: 0 0 10px 0;
+        }
+
+        .outbreaks-list {
+            padding-left: 20px;
+            list-style-type: disc;
+        }
+
+        .outbreaks-list .region {
+            color: #74c0c9;
+            font-weight: 700;
+        }
+
+        .footer {
+            background: #0a192f;
+            padding: 10px 15px;
+            text-align: center;
+            font-size: 13px;
+            color: #74c0c9;
+            border-top: 1px solid #1f4068;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Sidebar -->
+    <div class="sidebar">
+        <div class="logo" id="logo">GUARDIAN.ai</div>
+        <div class="tagline" id="tagline">Your AI Health Companion</div>
+        <div class="nav">
+            <button id="newChat">🆕 New Chat</button>
+            <a href="index.html"><button id="currentChat">💬 Current Chat</button></a>
+            <div class="nav-separator"></div>
+            <a href="blood.html"><button id="bloodAnalysis">📄 Blood Analysis</button></a>
+            <a href="tips.html"><button id="tips">💡 Preventive Tips</button></a>
+            <a href="reports.html"><button id="reports">📂 Past Reports</button></a>
+            <div class="nav-separator"></div>
+            <a href="quiz.html"><button id="quiz">📝 Health Quiz</button></a>
+            <a href="vaccination.html"><button id="vaccination">💉 Vaccination Schedule</button></a>
+            <a href="outbreaks.html"><button class="active" id="outbreaks">⚠️ Disease Outbreaks</button></a>
+        </div>
+        <div class="privacy-note" id="privacyNote">
+            🔒 Encrypted & Private<br />
+            Data is encrypted at rest & in transit.
+        </div>
+    </div>
+
+    <!-- Content Section -->
+    <div class="content-section">
+        <div class="content-header">
+            <span id="pageTitle">⚠️ Disease Outbreaks</span>
+            <div class="header-right">
+                <span class="location" id="location">📍 Bengaluru</span>
+                <select class="language-select" id="languageSelect">
+                    <option value="en">English</option>
+                    <option value="hi">हिन्दी</option>
+                    <option value="kn">ಕನ್ನಡ</option>
+                </select>
+            </div>
+        </div>
+
+        <div class="outbreaks-container">
+            <div class="outbreaks-section">
+                <h3 id="localTitle">📍 Outbreaks in Your Region</h3>
+                <p id="localContent">There are currently no reported disease outbreaks in your region.</p>
+            </div>
+            <div class="outbreaks-section">
+                <h3 id="nationalTitle">🌐 Outbreaks Across India</h3>
+                <ul class="outbreaks-list">
+                    <li><span class="region" id="delhiRegion">Delhi:</span> <span id="delhiContent">H3N2 influenza cases
+                            with
+                            prolonged symptoms, along with a Human Metapneumovirus (HMPV) outbreak, primarily affecting
+                            children.</span></li>
+                    <li><span class="region" id="keralaRegion">Kerala:</span> <span id="keralaContent">Nipah virus (NiV)
+                            cases
+                            confirmed, the most recent in July 2025.</span></li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="footer" id="footerText">
+            Disclaimer: GUARDIAN.ai provides AI-based health insights and is not a substitute for professional medical
+            advice.
+        </div>
+    </div>
+
+    <!-- Language Translation Script -->
+    <script>
+        const translations = {
+            en: {
+                logo: "GUARDIAN.ai",
+                tagline: "Your AI Health Companion",
+                newChat: "🆕 New Chat",
+                currentChat: "💬 Current Chat",
+                bloodAnalysis: "📄 Blood Analysis",
+                tips: "💡 Preventive Tips",
+                reports: "📂 Past Reports",
+                quiz: "📝 Health Quiz",
+                vaccination: "💉 Vaccination Schedule",
+                outbreaks: "⚠️ Disease Outbreaks",
+                privacyNote: "🔒 Encrypted & Private\nData is encrypted at rest & in transit.",
+                pageTitle: "⚠️ Disease Outbreaks",
+                localTitle: "📍 Outbreaks in Your Region",
+                localContent: "There are currently no reported disease outbreaks in your region.",
+                nationalTitle: "🌐 Outbreaks Across India",
+                delhiRegion: "Delhi:",
+                delhiContent: "H3N2 influenza cases with prolonged symptoms, along with a Human Metapneumovirus (HMPV) outbreak, primarily affecting children.",
+                keralaRegion: "Kerala:",
+                keralaContent: "Nipah virus (NiV) cases confirmed, the most recent in July 2025.",
+                footerText: "Disclaimer: GUARDIAN.ai provides AI-based health insights and is not a substitute for professional medical advice."
+            },
+            hi: {
+                logo: "गार्डियन.ai",
+                tagline: "आपका एआई स्वास्थ्य सहायक",
+                newChat: "🆕 नया चैट",
+                currentChat: "💬 वर्तमान चैट",
+                bloodAnalysis: "📄 रक्त विश्लेषण",
+                tips: "💡 रोकथाम सुझाव",
+                reports: "📂 पिछले रिपोर्ट",
+                quiz: "📝 स्वास्थ्य प्रश्नोत्तरी",
+                vaccination: "💉 टीकाकरण कार्यक्रम",
+                outbreaks: "⚠️ रोग प्रकोप",
+                privacyNote: "🔒 सुरक्षित और निजी\nडेटा एन्क्रिप्टेड है।",
+                pageTitle: "⚠️ रोग प्रकोप",
+                localTitle: "📍 आपके क्षेत्र में प्रकोप",
+                localContent: "आपके क्षेत्र में वर्तमान में कोई रोग प्रकोप रिपोर्ट नहीं हैं।",
+                nationalTitle: "🌐 पूरे भारत में प्रकोप",
+                delhiRegion: "दिल्ली:",
+                delhiContent: "H3N2 फ्लू के मामले, जिनमें लक्षण लंबे समय तक बने रहते हैं, साथ ही Human Metapneumovirus (HMPV) का प्रकोप, मुख्य रूप से बच्चों को प्रभावित करता है।",
+                keralaRegion: "केरल:",
+                keralaContent: "निपाह वायरस (NiV) के मामले पुष्टि किए गए, सबसे हालिया जुलाई 2025 में।",
+                footerText: "अस्वीकरण: GUARDIAN.ai एआई-आधारित स्वास्थ्य जानकारी प्रदान करता है और यह पेशेवर चिकित्सा सलाह का विकल्प नहीं है।"
+            },
+            kn: {
+                logo: "ಗಾರ್ಡಿಯನ್.ai",
+                tagline: "ನಿಮ್ಮ AI ಆರೋಗ್ಯ ಸಹಾಯಕ",
+                newChat: "🆕 ಹೊಸ ಚಾಟ್",
+                currentChat: "💬 ಪ್ರಸ್ತುತ ಚಾಟ್",
+                bloodAnalysis: "📄 ರಕ್ತ ವಿಶ್ಲೇಷಣೆ",
+                tips: "💡 ತಡೆಯುವ ಸಲಹೆಗಳು",
+                reports: "📂 ಹಳೆಯ ವರದಿಗಳು",
+                quiz: "📝 ಆರೋಗ್ಯ ಪ್ರಶ್ನೋತ್ತರ",
+                vaccination: "💉 ಲಸಿಕೆ ಯೋಜನೆ",
+                outbreaks: "⚠️ ರೋಗ ಪ್ರಬಲತೆ",
+                privacyNote: "🔒 ಎನ್‌ಕ್ರಿಪ್ಟ್ ಮತ್ತು ಖಾಸಗಿ\nಡೇಟಾ ಸುರಕ್ಷಿತವಾಗಿದೆ.",
+                pageTitle: "⚠️ ರೋಗ ಪ್ರಬಲತೆ",
+                localTitle: "📍 ನಿಮ್ಮ ಪ್ರದೇಶದ ಪ್ರಬಲತೆಗಳು",
+                localContent: "ನಿಮ್ಮ ಪ್ರದೇಶದಲ್ಲಿ ಪ್ರಸ್ತುತ ಯಾವುದೇ ರೋಗ ಪ್ರಬಲತೆ ವರದಿಯಾಗಿಲ್ಲ.",
+                nationalTitle: "🌐 ಭಾರತಾದ್ಯಂತ ಪ್ರಬಲತೆಗಳು",
+                delhiRegion: "ಡೆಲ್ಲಿ:",
+                delhiContent: "H3N2 ಫ್ಲೂ ಪ್ರಕರಣಗಳು, ದೀರ್ಘಕಾಲದ ಲಕ್ಷಣಗಳೊಂದಿಗೆ, Human Metapneumovirus (HMPV) ಪ್ರಬಲತೆಯೊಂದಿಗೆ, ಮುಖ್ಯವಾಗಿ ಮಕ್ಕಳನ್ನು ಪ್ರಭಾವಿಸುತ್ತದೆ.",
+                keralaRegion: "ಕೇರಳ:",
+                keralaContent: "ನಿಪಾಹ ವೈರಸ್ (NiV) ಪ್ರಕರಣಗಳು ದೃಢೀಕರಿಸಲಾಗಿದೆ, ಇತ್ತೀಚಿನ ಪ್ರಕರಣವು ಜುಲೈ 2025 ರಲ್ಲಿ ವರದಿಯಾಗಿತ್ತು.",
+                footerText: "ಅಸ್ವೀಕರಣ: GUARDIAN.ai AI ಆಧಾರಿತ ಆರೋಗ್ಯ ಮಾಹಿತಿಯನ್ನು ಒದಗಿಸುತ್ತದೆ ಮತ್ತು ಇದು ವೃತ್ತಿಪರ ವೈದ್ಯಕೀಯ ಸಲಹೆಯ ಪರ್ಯಾಯವಲ್ಲ."
+            }
+        };
+
+        const languageSelect = document.getElementById("languageSelect");
+
+        languageSelect.addEventListener("change", () => {
+            const lang = languageSelect.value;
+            const elements = translations[lang];
+
+            for (const id in elements) {
+                const el = document.getElementById(id);
+                if (el) {
+                    el.innerHTML = elements[id].replace(/\n/g, "<br />");
+                }
+            }
+        });
+    </script>
+</body>
+
+</html>

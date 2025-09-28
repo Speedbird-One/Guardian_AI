@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>GUARDIAN.ai • Vaccination Schedule</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: "Segoe UI", Tahoma, sans-serif;
+            background: #0b1e34;
+            color: #fff;
+            height: 100vh;
+            display: flex;
+            font-size: 16px;
+            line-height: 1.6;
+        }
+
+        /* Sidebar */
+        .sidebar {
+            width: 20%;
+            background: #0d182a;
+            display: flex;
+            flex-direction: column;
+            padding: 20px;
+            box-sizing: border-box;
+            border-right: 1px solid #1f4068;
+        }
+
+        .logo {
+            font-size: 22px;
+            font-weight: bold;
+            color: #a8dadc;
+            margin-bottom: 10px;
+        }
+
+        .tagline {
+            font-size: 14px;
+            color: #74c0c9;
+            margin-bottom: 25px;
+        }
+
+        .nav a {
+            text-decoration: none;
+        }
+
+        .nav button {
+            width: 100%;
+            padding: 12px;
+            margin-bottom: 12px;
+            border: none;
+            border-radius: 10px;
+            background: #1e3354;
+            color: #a8dadc;
+            font-size: 16px;
+            text-align: left;
+            cursor: pointer;
+            transition: 0.2s;
+        }
+
+        .nav button:hover,
+        .nav .active {
+            background: #457b9d;
+            color: #fff;
+        }
+
+        .nav-separator {
+            height: 1px;
+            background: #1f4068;
+            margin: 15px 0;
+        }
+
+        .privacy-note {
+            margin-top: auto;
+            font-size: 13px;
+            color: #74c0c9;
+            background: #0f1f36;
+            padding: 10px;
+            border-radius: 8px;
+        }
+
+        /* Content section */
+        .content-section {
+            flex: 1;
+            background: #11263f;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .content-header {
+            padding: 12px 20px;
+            background: #0a192f;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            font-size: 16px;
+            font-weight: bold;
+            color: #a8dadc;
+            border-bottom: 1px solid #1f4068;
+        }
+
+        .header-right {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .location {
+            font-size: 14px;
+            color: #74c0c9;
+        }
+
+        .language-select {
+            background: #1e3354;
+            color: #a8dadc;
+            border: none;
+            border-radius: 8px;
+            padding: 5px 10px;
+            font-size: 14px;
+            cursor: pointer;
+        }
+
+        .language-select:hover {
+            background: #457b9d;
+            color: #fff;
+        }
+
+        .content-main {
+            flex: 1;
+            padding: 30px;
+            overflow-y: auto;
+        }
+
+        h2 {
+            margin: 0 0 40px;
+            font-size: 22px;
+            color: #fff;
+            text-align: center;
+            position: relative;
+        }
+
+        /* Timeline styles */
+        .timeline {
+            position: relative;
+            margin: 20px auto;
+            padding: 0;
+            width: 80%;
+            /* remove old left border */
+        }
+
+        .timeline::before {
+            content: "";
+            position: absolute;
+            left: 11px;
+            /* aligns with the center of circles (half of 22px width) */
+            top: 0;
+            width: 3px;
+            /* line thickness */
+            height: 100%;
+            background: #74c0c9;
+        }
+
+        .timeline-item {
+            position: relative;
+            padding-left: 40px;
+            /* space for circle */
+            margin: 30px 0;
+        }
+
+        .timeline-item::before {
+            content: "";
+            position: absolute;
+            left: 0;
+            /* circle sits at left edge of item */
+            top: 0;
+            /* vertically aligned with top of content */
+            width: 22px;
+            height: 22px;
+            background: #74c0c9;
+            border-radius: 50%;
+            border: 2px solid #fff;
+        }
+
+        .timeline-item.start::before {
+            background: #ffb703;
+            /* distinct color for start node */
+        }
+
+        .timeline-item h3 {
+            font-size: 18px;
+            margin: 0 0 6px 0;
+            color: #a8dadc;
+        }
+
+        .timeline-item p {
+            font-size: 15px;
+            line-height: 1.5;
+            margin: 0;
+            color: #fff;
+        }
+
+        .camp-button {
+            margin: 30px 0 0 60px;
+            /* top margin + shift to the right */
+            padding: 14px 24px;
+            font-size: 16px;
+            font-weight: bold;
+            color: #fff;
+            background: #457b9d;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: 0.2s;
+            text-decoration: none;
+            display: inline-block;
+        }
+
+        .camp-button:hover {
+            background: #1e3354;
+        }
+
+        /* Footer */
+        .footer {
+            background: #0a192f;
+            padding: 10px 15px;
+            text-align: center;
+            font-size: 13px;
+            color: #74c0c9;
+            border-top: 1px solid #1f4068;
+        }
+    </style>
+
+</head>
+
+<body>
+    <!-- Sidebar -->
+    <div class="sidebar">
+        <div class="logo">GUARDIAN.ai</div>
+        <div class="tagline">Your AI Health Companion</div>
+        <div class="nav">
+            <a href="index.html"><button>💬 Chat</button></a>
+            <a href="blood.html"><button>📄 Blood Analysis</button></a>
+            <a href="tips.html"><button>💡 Preventive Tips</button></a>
+            <a href="reports.html"><button>📂 Past Reports</button></a>
+
+            <div class="nav-separator"></div>
+
+            <a href="quiz.html"><button>📝 Health Quiz</button></a>
+            <a href="vaccination.html"><button class="active">💉 Vaccination Schedule</button></a>
+            <a href="outbreaks.html"><button>⚠️ Disease Outbreaks</button></a>
+        </div>
+
+        <div class="privacy-note">
+            🔒 Encrypted & Private<br />
+            Data is encrypted at rest & in transit.
+        </div>
+    </div>
+
+    <!-- Content section -->
+    <div class="content-section">
+        <div class="content-header">
+            💉 Vaccination Schedule
+            <div class="header-right">
+                <span class="location">📍 Bengaluru</span>
+                <select class="language-select">
+                    <option value="en">English</option>
+                    <option value="hi">हिन्दी</option>
+                    <option value="kn">ಕನ್ನಡ</option>
+                </select>
+            </div>
+        </div>
+
+        <div class="content-main">
+            <h2>💉 Vaccination Journey</h2>
+            <div class="timeline">
+                <div class="timeline-item start">
+                    <div class="timeline-content">
+                        <h3>Start: At Birth</h3>
+                        <p>Immunization begins here.</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <input type="checkbox" id="birth">
+                    <label for="birth"><b>At Birth:</b> BCG, OPV-0, Hepatitis B</label>
+                </div>
+                <div class="timeline-item">
+                    <input type="checkbox" id="6weeks">
+                    <label for="6weeks"><b>6 Weeks:</b> DPT-1, OPV-1, HepB-1</label>
+                </div>
+                <div class="timeline-item">
+                    <input type="checkbox" id="10weeks">
+                    <label for="10weeks"><b>10 Weeks:</b> DPT-2, OPV-2, HepB-2</label>
+                </div>
+                <div class="timeline-item">
+                    <input type="checkbox" id="14weeks">
+                    <label for="14weeks"><b>14 Weeks:</b> DPT-3, OPV-3, HepB-3</label>
+                </div>
+                <div class="timeline-item">
+                    <input type="checkbox" id="9months">
+                    <label for="9months"><b>9 Months:</b> Measles-1</label>
+                </div>
+                <div class="timeline-item">
+                    <input type="checkbox" id="16months">
+                    <label for="16months"><b>16–24 Months:</b> Measles-2, DPT booster</label>
+                </div>
+                <div class="timeline-item">
+                    <input type="checkbox" id="child">
+                    <label for="child"><b>5–6 Years:</b> DPT booster, OPV booster</label>
+                </div>
+                <div class="timeline-item">
+                    <input type="checkbox" id="adolescent">
+                    <label for="adolescent"><b>10–16 Years:</b> Tetanus Toxoid (TT)</label>
+                </div>
+                <div class="timeline-item">
+                    <input type="checkbox" id="pregnant">
+                    <label for="pregnant"><b>Pregnant Women:</b> TT (2 doses)</label>
+                </div>
+            </div>
+
+            <a href="https://www.google.com/maps/dir/12.9255319,77.4776919/WF8J%2B78W,+3rd+Main+Road,+Stage+I,+Kengeri+Satellite+Town,+Bengaluru,+Karnataka+560060/@12.9203711,77.473778,16z/data=!3m1!4b1!4m9!4m8!1m1!4e1!1m5!1m1!1s0x3bae3f2813d2c7e9:0x9afed1263e33f21f!2m2!1d77.4808294!2d12.9157483?entry=ttu"
+                target="_blank" class="camp-button">📍 Locate Nearest Vaccination Camp</a>
+        </div>
+
+        <div class="footer">
+            Disclaimer: GUARDIAN.ai provides AI-based health insights and is not a
+            substitute for professional medical advice.
+        </div>
+    </div>
+</body>
+
+</html>

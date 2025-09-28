@@ -58,7 +58,11 @@ def chat():
         try:
             response = client.chat.completions.create(
                 model="gpt-4o-mini",
-                messages=chat_memory
+                messages=[
+                        {"role":"system", "content": "You are Guardian AI, a professional medical assistant. "
+                                                    "Provide clear, accurate, but short and crisp answers (no more than 5-6 line) to user questions."},
+                        {"role":"user", "content": user_input}
+                    ]
             )
             answer = response.choices[0].message.content.strip()
             answer = strip_markdown(answer)

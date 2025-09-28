@@ -1,357 +1,437 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width,initial-scale=1" />
-    <title>GUARDIAN.ai • Past Reports</title>
 
-    <!-- Chart.js -->
-    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>GUARDIAN.ai • Past Reports</title>
 
-    <style>
-      /* Page basics */
-      :root {
-        --bg-dark: #0b1e34;
-        --panel: #0f1f36;
-        --muted: #74c0c9;
-        --accent: #a8dadc;
-        --border: #1f4068;
-      }
-      body {
-        margin: 0;
-        font-family: "Segoe UI", Tahoma, sans-serif;
-        background: var(--bg-dark);
-        color: #fff;
-        height: 100vh;
-        display: flex;
-        font-size: 16px;
-        line-height: 1.6;
-        -webkit-font-smoothing: antialiased;
-      }
+  <!-- Chart.js -->
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 
-      /* Layout */
+  <style>
+    /* Page basics */
+    :root {
+      --bg-dark: #0b1e34;
+      --panel: #0f1f36;
+      --muted: #74c0c9;
+      --accent: #a8dadc;
+      --border: #1f4068;
+    }
+
+    body {
+      margin: 0;
+      font-family: "Segoe UI", Tahoma, sans-serif;
+      background: var(--bg-dark);
+      color: #fff;
+      height: 100vh;
+      display: flex;
+      font-size: 16px;
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* Layout */
+    .sidebar {
+      width: 20%;
+      background: #0d182a;
+      display: flex;
+      flex-direction: column;
+      padding: 20px;
+      box-sizing: border-box;
+      border-right: 1px solid var(--border);
+    }
+
+    .content-section {
+      flex: 1;
+      background: #11263f;
+      display: flex;
+      flex-direction: column;
+    }
+
+    /* Sidebar */
+    .logo {
+      font-size: 22px;
+      font-weight: 700;
+      color: var(--accent);
+      margin-bottom: 8px;
+    }
+
+    .tagline {
+      font-size: 14px;
+      color: var(--muted);
+      margin-bottom: 22px;
+    }
+
+    .nav {
+      display: block;
+    }
+
+    .nav a {
+      text-decoration: none;
+      display: block;
+    }
+
+    .nav button {
+      width: 100%;
+      padding: 12px;
+      margin-bottom: 12px;
+      border: none;
+      border-radius: 10px;
+      background: #1e3354;
+      color: var(--accent);
+      font-size: 16px;
+      text-align: left;
+      cursor: pointer;
+      transition: 0.18s;
+    }
+
+    .nav button:hover,
+    .nav .active {
+      background: #457b9d;
+      color: #fff;
+    }
+
+    .nav-separator {
+      height: 1px;
+      background: #1f4068;
+      margin: 15px 0;
+    }
+
+    .privacy-note {
+      margin-top: auto;
+      font-size: 13px;
+      color: var(--muted);
+      background: var(--panel);
+      padding: 10px;
+      border-radius: 8px;
+    }
+
+    /* Header + diagnosis */
+    .content-header {
+      padding: 12px 20px;
+      background: #0a192f;
+      font-size: 16px;
+      font-weight: 700;
+      color: #a8dadc;
+      border-bottom: 1px solid #1f4068;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .header-right {
+      display: flex;
+      align-items: center;
+      gap: 15px;
+    }
+
+    .location {
+      font-size: 14px;
+      color: #74c0c9;
+    }
+
+    .language-select {
+      background: #1e3354;
+      color: #a8dadc;
+      border: none;
+      border-radius: 8px;
+      padding: 5px 10px;
+      font-size: 14px;
+      cursor: pointer;
+    }
+
+    .language-select:hover {
+      background: #457b9d;
+      color: #fff;
+    }
+
+
+    .diagnosis {
+      padding: 18px 20px;
+      text-align: center;
+      font-size: 18px;
+      font-weight: 700;
+      color: #f4a261;
+      background: transparent;
+    }
+
+    /* Charts container + cards */
+    .charts-container {
+      flex: 1;
+      padding: 20px;
+      overflow-y: auto;
+      scroll-snap-type: y mandatory;
+    }
+
+    .chart-box {
+      background: var(--panel);
+      padding: 18px;
+      border-radius: 10px;
+      margin-bottom: 36px;
+      min-height: 520px;
+      /* increased to allow bigger charts */
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: flex-start;
+      box-sizing: border-box;
+      scroll-snap-align: center;
+      /* snap to center of viewport */
+    }
+
+    .chart-box h3 {
+      color: var(--accent);
+      margin: 6px 0 12px;
+      font-size: 18px;
+      text-align: center;
+    }
+
+    /* Slight limit so charts don't get absurdly wide on very large displays */
+    .chart-wrap {
+      width: 100%;
+      max-width: 1100px;
+    }
+
+    .chart-wrap canvas {
+      width: 100% !important;
+      height: 380px !important;
+      /* made larger than before */
+      display: block;
+    }
+
+    .description {
+      font-size: 15px;
+      /* was 13px */
+      color: var(--muted);
+      text-align: center;
+      margin-top: 12px;
+      max-width: 920px;
+    }
+
+    /* Footer */
+    .footer {
+      background: #0a192f;
+      padding: 10px 15px;
+      text-align: center;
+      font-size: 13px;
+      color: var(--muted);
+      border-top: 1px solid var(--border);
+    }
+
+    /* Small responsive tweaks */
+    @media (max-width: 900px) {
       .sidebar {
-        width: 20%;
-        background: #0d182a;
-        display: flex;
-        flex-direction: column;
-        padding: 20px;
-        box-sizing: border-box;
-        border-right: 1px solid var(--border);
-      }
-      .content-section {
-        flex: 1;
-        background: #11263f;
-        display: flex;
-        flex-direction: column;
-      }
-
-      /* Sidebar */
-      .logo {
-        font-size: 22px;
-        font-weight: 700;
-        color: var(--accent);
-        margin-bottom: 8px;
-      }
-      .tagline {
-        font-size: 14px;
-        color: var(--muted);
-        margin-bottom: 22px;
-      }
-      .nav {
-        display: block;
-      }
-      .nav a {
-        text-decoration: none;
-        display: block;
-      }
-      .nav button {
-        width: 100%;
-        padding: 12px;
-        margin-bottom: 12px;
-        border: none;
-        border-radius: 10px;
-        background: #1e3354;
-        color: var(--accent);
-        font-size: 16px;
-        text-align: left;
-        cursor: pointer;
-        transition: 0.18s;
-      }
-      .nav button:hover,
-      .nav .active {
-        background: #457b9d;
-        color: #fff;
-      }
-      .privacy-note {
-        margin-top: auto;
-        font-size: 13px;
-        color: var(--muted);
-        background: var(--panel);
-        padding: 10px;
-        border-radius: 8px;
-      }
-
-      /* Header + diagnosis */
-      .content-header {
-        padding: 12px 20px;
-        background: #0a192f;
-        font-size: 16px;
-        font-weight: 700;
-        color: var(--accent);
-        border-bottom: 1px solid var(--border);
-      }
-      .diagnosis {
-        padding: 18px 20px;
-        text-align: center;
-        font-size: 18px;
-        font-weight: 700;
-        color: #f4a261;
-        background: transparent;
-      }
-
-      /* Charts container + cards */
-      .charts-container {
-        flex: 1;
-        padding: 20px;
-        overflow-y: auto;
-        scroll-snap-type: y mandatory;
+        width: 240px;
       }
 
       .chart-box {
-        background: var(--panel);
-        padding: 18px;
-        border-radius: 10px;
-        margin-bottom: 36px;
-        min-height: 520px; /* increased to allow bigger charts */
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: flex-start;
-        box-sizing: border-box;
-        scroll-snap-align: center; /* snap to center of viewport */
+        min-height: 480px;
       }
 
-      .chart-box h3 {
-        color: var(--accent);
-        margin: 6px 0 12px;
-        font-size: 18px;
-        text-align: center;
-      }
-
-      /* Slight limit so charts don't get absurdly wide on very large displays */
       .chart-wrap {
-        width: 100%;
-        max-width: 1100px;
+        max-width: 760px;
       }
 
       .chart-wrap canvas {
-        width: 100% !important;
-        height: 380px !important; /* made larger than before */
-        display: block;
+        height: 320px !important;
       }
+    }
+  </style>
+</head>
 
-      .description {
-        font-size: 15px; /* was 13px */
-        color: var(--muted);
-        text-align: center;
-        margin-top: 12px;
-        max-width: 920px;
-      }
+<body>
+  <!-- Sidebar -->
+  <div class="sidebar">
+    <div class="logo">GUARDIAN.ai</div>
+    <div class="tagline">Your AI Health Companion</div>
 
-      /* Footer */
-      .footer {
-        background: #0a192f;
-        padding: 10px 15px;
-        text-align: center;
-        font-size: 13px;
-        color: var(--muted);
-        border-top: 1px solid var(--border);
-      }
+    <div class="nav">
+      <!-- Top group: Chat -->
+      <button>🆕 New Chat</button>
+      <a href="index.html"><button>💬 Current Chat</button></a>
 
-      /* Small responsive tweaks */
-      @media (max-width: 900px) {
-        .sidebar {
-          width: 240px;
-        }
-        .chart-box {
-          min-height: 480px;
-        }
-        .chart-wrap {
-          max-width: 760px;
-        }
-        .chart-wrap canvas {
-          height: 320px !important;
-        }
-      }
-    </style>
-  </head>
-  <body>
-    <!-- Sidebar -->
-    <div class="sidebar">
-      <div class="logo">GUARDIAN.ai</div>
-      <div class="tagline">Your AI Health Companion</div>
+      <!-- Separator -->
+      <div class="nav-separator"></div>
 
-      <div class="nav">
-        <button>🆕 New Chat</button>
-        <a href="index.html"><button>💬 Current Chat</button></a>
-        <a href="cbc.html"><button>📄 CBC Analysis</button></a>
-        <a href="tips.html"><button>💡 Preventive Tips</button></a>
-        <a href="reports.html"
-          ><button class="active">📂 Past Reports</button></a
-        >
-      </div>
+      <!-- Middle group: Blood & health tracking -->
+      <a href="blood.html"><button>📄 Blood Analysis</button></a>
+      <a href="tips.html"><button>💡 Preventive Tips</button></a>
+      <a href="reports.html"><button class="active">📂 Past Reports</button></a>
 
-      <div class="privacy-note">
-        🔒 Encrypted & Private<br />
-        All uploads stored locally in this demo.<br />
-        In production, data is encrypted at rest & in transit.
+      <!-- Separator -->
+      <div class="nav-separator"></div>
+
+      <!-- Bottom group: Health reference -->
+      <a href="quiz.html"><button>📝 Health Quiz</button></a>
+      <a href="vaccination.html"><button>💉 Vaccination Schedule</button></a>
+      <a href="outbreaks.html"><button>⚠️ Disease Outbreaks</button></a>
+    </div>
+
+
+    <div class="privacy-note">
+      🔒 Encrypted & Private<br />
+      Data is encrypted at rest & in transit.
+    </div>
+  </div>
+
+  <!-- Main Content -->
+  <div class="content-section">
+    <div class="content-header">
+      📂 Past Reports
+      <div class="header-right">
+        <!-- Location Indicator -->
+        <span class="location">📍 Bengaluru</span>
+
+        <!-- Language Dropdown -->
+        <select class="language-select">
+          <option value="en">English</option>
+          <option value="hi">हिन्दी</option>
+          <option value="kn">ಕನ್ನಡ</option>
+        </select>
       </div>
     </div>
 
-    <!-- Main Content -->
-    <div class="content-section">
-      <div class="content-header">📂 Past Reports</div>
+    <!-- Diagnosis shown prominently in main area -->
+    <div class="diagnosis">Diagnosis: Iron Deficiency Anaemia</div>
 
-      <!-- Diagnosis shown prominently in main area -->
-      <div class="diagnosis">Diagnosis: Iron Deficiency Anaemia</div>
-
-      <div class="charts-container">
-        <!-- Card 1: Immune group -->
-        <div class="chart-box">
-          <h3>WBC • NEUTp • LYMp</h3>
-          <div class="chart-wrap"><canvas id="chartImmune"></canvas></div>
-          <div class="description">
-            White blood cell count and differential percentages — reflect immune
-            cell distribution and response.
-          </div>
-        </div>
-
-        <!-- Card 2: Oxygen transport group -->
-        <div class="chart-box">
-          <h3>RBC • HGB • HCT</h3>
-          <div class="chart-wrap"><canvas id="chartOxygen"></canvas></div>
-          <div class="description">
-            Red cell count, haemoglobin and haematocrit — key markers of
-            oxygen-carrying capacity and anemia severity.
-          </div>
-        </div>
-
-        <!-- Card 3: Indices -->
-        <div class="chart-box">
-          <h3>MCV • MCH • MCHC</h3>
-          <div class="chart-wrap"><canvas id="chartIndices"></canvas></div>
-          <div class="description">
-            Red cell indices (size and haemoglobin content) used to classify
-            anaemia types (e.g. microcytic in iron deficiency).
-          </div>
-        </div>
-
-        <!-- Card 4: Platelets group -->
-        <div class="chart-box">
-          <h3>PLT • PDW • PCT</h3>
-          <div class="chart-wrap"><canvas id="chartPlatelets"></canvas></div>
-          <div class="description">
-            Platelet count and related metrics — important for clotting and
-            platelet distribution.
-          </div>
+    <div class="charts-container">
+      <!-- Card 1: Immune group -->
+      <div class="chart-box">
+        <h3>WBC • NEUTp • LYMp</h3>
+        <div class="chart-wrap"><canvas id="chartImmune"></canvas></div>
+        <div class="description">
+          White blood cell count and differential percentages — reflect immune
+          cell distribution and response.
         </div>
       </div>
 
-      <div class="footer">
-        Disclaimer: GUARDIAN.ai provides AI-based health insights and is not a
-        substitute for professional medical advice.
+      <!-- Card 2: Oxygen transport group -->
+      <div class="chart-box">
+        <h3>RBC • HGB • HCT</h3>
+        <div class="chart-wrap"><canvas id="chartOxygen"></canvas></div>
+        <div class="description">
+          Red cell count, haemoglobin and haematocrit — key markers of
+          oxygen-carrying capacity and anemia severity.
+        </div>
+      </div>
+
+      <!-- Card 3: Indices -->
+      <div class="chart-box">
+        <h3>MCV • MCH • MCHC</h3>
+        <div class="chart-wrap"><canvas id="chartIndices"></canvas></div>
+        <div class="description">
+          Red cell indices (size and haemoglobin content) used to classify
+          anaemia types (e.g. microcytic in iron deficiency).
+        </div>
+      </div>
+
+      <!-- Card 4: Platelets group -->
+      <div class="chart-box">
+        <h3>PLT • PDW • PCT</h3>
+        <div class="chart-wrap"><canvas id="chartPlatelets"></canvas></div>
+        <div class="description">
+          Platelet count and related metrics — important for clotting and
+          platelet distribution.
+        </div>
       </div>
     </div>
 
-    <!-- Script: generate grouped charts -->
-    <script>
-      // Labels over 12 months (0,3,6,9,12)
-      const labels = ["0m", "3m", "6m", "9m", "12m"];
+    <div class="footer">
+      Disclaimer: GUARDIAN.ai provides AI-based health insights and is not a
+      substitute for professional medical advice.
+    </div>
+  </div>
 
-      // Simulated recovery data (severe at 0m → progressive improvement)
-      const groupedData = {
-        Immune: {
-          WBC: [3.0, 4.0, 5.0, 5.5, 6.0],
-          NEUTp: [75, 70, 65, 60, 55],
-          LYMp: [15, 18, 20, 23, 25],
-        },
-        Oxygen: {
-          RBC: [2.8, 3.2, 3.8, 4.2, 4.5],
-          HGB: [7.0, 8.5, 10.0, 11.5, 12.5],
-          HCT: [25, 28, 32, 36, 38],
-        },
-        Indices: {
-          MCV: [70, 74, 78, 80, 82],
-          MCH: [20, 22, 25, 27, 28],
-          MCHC: [28, 29, 30, 31, 32],
-        },
-        Platelets: {
-          PLT: [400, 380, 360, 330, 300],
-          PDW: [20, 19, 18, 17, 16],
-          PCT: [0.4, 0.38, 0.35, 0.32, 0.3],
-        },
-      };
+  <!-- Script: generate grouped charts -->
+  <script>
+    // Labels over 12 months (0,3,6,9,12)
+    const labels = ["0m", "3m", "6m", "9m", "12m"];
 
-      // Color palette (consistent)
-      const colorPalette = [
-        "#4dabf7",
-        "#ffd166",
-        "#06d6a0",
-        "#f783ac",
-        "#90e0ef",
-        "#f4a261",
-      ];
+    // Simulated recovery data (severe at 0m → progressive improvement)
+    const groupedData = {
+      Immune: {
+        WBC: [3.0, 4.0, 5.0, 5.5, 6.0],
+        NEUTp: [75, 70, 65, 60, 55],
+        LYMp: [15, 18, 20, 23, 25],
+      },
+      Oxygen: {
+        RBC: [2.8, 3.2, 3.8, 4.2, 4.5],
+        HGB: [7.0, 8.5, 10.0, 11.5, 12.5],
+        HCT: [25, 28, 32, 36, 38],
+      },
+      Indices: {
+        MCV: [70, 74, 78, 80, 82],
+        MCH: [20, 22, 25, 27, 28],
+        MCHC: [28, 29, 30, 31, 32],
+      },
+      Platelets: {
+        PLT: [400, 380, 360, 330, 300],
+        PDW: [20, 19, 18, 17, 16],
+        PCT: [0.4, 0.38, 0.35, 0.32, 0.3],
+      },
+    };
 
-      // Chart creation utility
-      function createGroupChart(canvasId, dataGroup) {
-        const datasets = [];
-        let idx = 0;
-        for (const [label, values] of Object.entries(dataGroup)) {
-          datasets.push({
-            label,
-            data: values,
-            fill: false,
-            borderColor: colorPalette[idx % colorPalette.length],
-            backgroundColor: colorPalette[idx % colorPalette.length],
-            tension: 0.25,
-            pointRadius: 4,
-            borderWidth: 2,
-          });
-          idx++;
-        }
+    // Color palette (consistent)
+    const colorPalette = [
+      "#4dabf7",
+      "#ffd166",
+      "#06d6a0",
+      "#f783ac",
+      "#90e0ef",
+      "#f4a261",
+    ];
 
-        const ctx = document.getElementById(canvasId);
+    // Chart creation utility
+    function createGroupChart(canvasId, dataGroup) {
+      const datasets = [];
+      let idx = 0;
+      for (const [label, values] of Object.entries(dataGroup)) {
+        datasets.push({
+          label,
+          data: values,
+          fill: false,
+          borderColor: colorPalette[idx % colorPalette.length],
+          backgroundColor: colorPalette[idx % colorPalette.length],
+          tension: 0.25,
+          pointRadius: 4,
+          borderWidth: 2,
+        });
+        idx++;
+      }
 
-        // Ensure Chart uses provided canvas height
-        new Chart(ctx, {
-          type: "line",
-          data: { labels, datasets },
-          options: {
-            responsive: true,
-            maintainAspectRatio: false,
-            interaction: { mode: "index", intersect: false },
-            scales: {
-              x: { ticks: { color: "#a8dadc" }, grid: { color: "#1f4068" } },
-              y: {
-                ticks: { color: "#a8dadc" },
-                grid: { color: "#1f4068" },
-                beginAtZero: false,
-              },
-            },
-            plugins: {
-              legend: { labels: { color: "#a8dadc" } },
-              tooltip: { enabled: true },
+      const ctx = document.getElementById(canvasId);
+
+      // Ensure Chart uses provided canvas height
+      new Chart(ctx, {
+        type: "line",
+        data: { labels, datasets },
+        options: {
+          responsive: true,
+          maintainAspectRatio: false,
+          interaction: { mode: "index", intersect: false },
+          scales: {
+            x: { ticks: { color: "#a8dadc" }, grid: { color: "#1f4068" } },
+            y: {
+              ticks: { color: "#a8dadc" },
+              grid: { color: "#1f4068" },
+              beginAtZero: false,
             },
           },
-        });
-      }
+          plugins: {
+            legend: { labels: { color: "#a8dadc" } },
+            tooltip: { enabled: true },
+          },
+        },
+      });
+    }
 
-      // Build charts
-      createGroupChart("chartImmune", groupedData.Immune);
-      createGroupChart("chartOxygen", groupedData.Oxygen);
-      createGroupChart("chartIndices", groupedData.Indices);
-      createGroupChart("chartPlatelets", groupedData.Platelets);
-    </script>
-  </body>
+    // Build charts
+    createGroupChart("chartImmune", groupedData.Immune);
+    createGroupChart("chartOxygen", groupedData.Oxygen);
+    createGroupChart("chartIndices", groupedData.Indices);
+    createGroupChart("chartPlatelets", groupedData.Platelets);
+  </script>
+</body>
+
 </html>
